@@ -1,8 +1,8 @@
 ## AFTERMATH
 
-[Click on Link to view GitHub Repo](https://github.com/bartsw01/GA-Project2-Class-Registration)
+[Click on Link to view GitHub Repo](https://github.com/pauladixon/aftermath)
 
-[Click on Link to Open Trello Board](https://github.com/pauladixon/aftermath)
+[Click on Link to Open Trello Board]()
 
 # _Screenshot(s):
 
