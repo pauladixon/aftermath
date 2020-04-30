@@ -2,7 +2,9 @@
 
 [Click on Link to view GitHub Repo](https://github.com/pauladixon/aftermath)
 
-[Click on Link to Open Trello Board]()
+[Click on Link to Open Trello Board](https://trello.com/b/ajHjwUkv/aftermath)
+
+[Click on Link to Open ERD](https://app.diagrams.net/#G1hmPNQ0AUTSyG87ymW0KljbBRQCKrdCIy)
 
 # _Screenshot(s):
 
