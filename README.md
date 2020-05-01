@@ -61,7 +61,8 @@ _GitHub_
 
 ## Planned future enhancements 
 
-
+- more photos of Koa
+- we want more of koa
 
 
 ### License
