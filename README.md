@@ -73,5 +73,5 @@ Copyright (c) 2020 **_Paula - Terrell - Koa - Bart_**
 =======
 Team Members: Paula Dixon, Bart Weber, Koa Shima, Terrell Lemons
 
-# Hello from Terrell
+# Commiting a merge, from Terrell
 
