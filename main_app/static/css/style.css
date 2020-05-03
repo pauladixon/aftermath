@@ -1,0 +1,106 @@
+body {
+    background-color: #6e7a7a;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    border: solid 10px #535c5c;
+    font-family: 'Orator Std', 'Courier New', Courier, monospace;
+    color: white;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer.page-footer {
+    max-height: 10vh;
+    text-align: right;
+    color: #babcbc;
+}
+
+.block {
+    background-color: #6e7a7a;
+    border: solid 10px #8b9595;
+    display: flex;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'code code code code'
+        'challenges challenges forum forum';
+}
+
+.code-today {
+    grid-area: code;
+    background-color: #6e7a7a;
+    border-top: solid 10px #8b9595;
+    border-right: solid 10px #8b9595;
+    border-left: solid 10px #8b9595;
+    margin: 0px;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+}
+
+.past-challenge {
+    grid-area: challenges;
+    background-color: #6e7a7a;
+    border-top: solid 10px #8b9595;
+    border-right: solid 10px #8b9595;
+    border-left: solid 10px #8b9595;
+    margin: 0px;
+}
+
+.free-forum {
+    grid-area: forum;
+    background-color: #6e7a7a;
+    border-top: solid 10px #8b9595;
+    border-right: solid 10px #8b9595;
+    border-left: solid 10px #8b9595;
+    margin: 0px;
+}
+
+
+.title {
+    background-color: #a8afaf;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    font-size: 15px;
+    letter-spacing: .1em;
+    color: #535c5c;
+}
+
+.code-block {
+    color: #babcbc;
+    background-color: #535c5c;
+    margin: 0px 10px;
+    display: grid;
+    width: 400px;
+}
+
+.code-snippet {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 15px;
+    background-color: #3e4545;
+    display: grid;
+    padding: 0px 10px;
+    margin: 10px;
+}
+
+.indent {
+    margin-left: 20px;
+    margin-top: 0px;
+    height: 50px;
+}
+
+.forum-lists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
