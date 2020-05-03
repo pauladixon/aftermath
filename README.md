@@ -8,7 +8,7 @@
 
 # _Screenshot(s):
 
-![Game Screenshot]()
+![ERD Screenshot]()
 
 #### _Class Group Project 3, April 2020_
 
