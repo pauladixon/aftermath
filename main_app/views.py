@@ -32,7 +32,7 @@ def posts_detail(request, post_id):
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['name']
+    fields = '__all__'
 
     def form_valid(self, form):
       form.instance.user = self.request.user  
