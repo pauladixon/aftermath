@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <title>aftermath</title>
+    </head>
+    <body>
+        <header>
+            <nav class="nav-wrapper black">
+                <div class="container">
+                    <ul>
+                        <li><a href="/" class="left" class="brand-logo">&nbsp;&nbsp;AFTERMATH</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class='container'>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer class="page-footer black">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        All Rights Reserved &copy; 2020 AFTERMATH, Inc. &nbsp;
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    </body>
+</html>
