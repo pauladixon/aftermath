@@ -18,8 +18,14 @@
                     </ul>
                     <ul class="right">
                         <li><a href="/about">about</a></li>
-                        <li><a href="/challenges">all challenges</a></li>
-                        <li><a href="/posts">free forum</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="/challenges">all challenges</a></li>
+                            <li><a href="/posts">free forum</a></li>
+                            <li><a href="{% url 'logout' %}">log out</a></li>
+                        {% else %}
+                            <li><a href="{% url 'signup' %}">sign up</a></li>
+                            <li><a href="{% url 'login' %}">log in</a></li>
+                        {% endif %}    
                     </ul>
                 </div>
             </nav>
