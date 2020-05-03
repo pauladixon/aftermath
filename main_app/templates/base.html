@@ -17,10 +17,11 @@
                         <li><a href="/" class="left" class="brand-logo">&nbsp;&nbsp;AFTERMATH</a></li>
                     </ul>
                     <ul class="right">
-                        <li><a href="/about">about</a></li>
+                        <li><a href="{% url 'about' %}">about</a></li>
                         {% if user.is_authenticated %}
-                            <li><a href="/challenges">all challenges</a></li>
-                            <li><a href="/posts">free forum</a></li>
+                            <li><a href="{% url 'challenges_index' %}">all challenges</a></li>
+                            <li><a href="{% url 'posts_index' %}">free forum</a></li>
+                            <li><a href="{% url 'posts_create' %}">add a forum topic</a></li>
                             <li><a href="{% url 'logout' %}">log out</a></li>
                         {% else %}
                             <li><a href="{% url 'signup' %}">sign up</a></li>

@@ -2,5 +2,13 @@
 
 {% block content %}
 <h1> FREE FORUM </h1>
-
+{% for post in posts %}
+<div>
+    <a href="/posts/{{ post.id }}">
+      <div>
+        <span>{{ post.name }}</span>
+      </div>
+    </a>
+  </div>
+{% endfor %}
 {% endblock %}
