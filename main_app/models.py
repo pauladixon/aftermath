@@ -12,6 +12,7 @@ class Challenge(models.Model):
     # then import the challenge model into the python repl shell and run that class method called import data 
 
 class Post(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100)
     topic = models.CharField(max_length=100, default='')
     content = models.TextField(max_length=250, default='')
