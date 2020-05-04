@@ -4,6 +4,11 @@ from django.contrib.auth.models import User
 
 class Challenge(models.Model):
     name = models.CharField(max_length=100)
+    # add a class method
+    # a model is just a class
+    # you can write a class method to import data
+    # the point is to call the api, grab 5 challenges, and save them to the database
+    # then import the challenge model into the python repl shell and run that class method called import data 
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
