@@ -35,9 +35,14 @@
           <td>{{ postcomment.created_at }}</td>
           <td>{{ postcomment.user }}</td>
           <td>{{ postcomment.content }}</td>          
-          <td></td>         
+        {% if user == postcomment.user %}
+          <td><a href="{% url 'post_delete_comment' postcomment.id %}">x</a></td>         
+        {% else %}
+          <td></td>
+        {% endif %}
         </tr>
 
+ 
         {% endfor%}
       </tbody>
     </table>
