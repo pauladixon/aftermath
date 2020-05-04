@@ -16,26 +16,43 @@
 
     <div class="past-challenge left">
         <p class="title">past challenges</p>
-        <div class="forum-lists">
-            <ul>
-                <li> 5/6 | python classes | 3 comments </li>
-                <li> 5/6 | python classes | 3 comments </li>
-                <li> 5/6 | python classes | 3 comments </li>
-                <li> 5/6 | python classes | 3 comments </li>
-                <li> 5/6 | python classes | 3 comments </li>
-            </ul>
-        </div>
+        <table class="forum-lists">
+            <tbody>
+                <tr>
+                    <td>date</td>
+                    <td>challenge topic</li>
+                    <td>comments</td>
+                </tr>
+                <tr>
+                    <td>date</td>
+                    <td>challenge topic</li>
+                    <td>comments</td>
+                </tr>
+                <tr>
+                    <td>date</td>
+                    <td>challenge topic</li>
+                    <td>comments</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="free-forum right">
         <p class="title">free forum</p>
-        <div class="forum-lists">
-            <ul>
-                <li> 5/6 | meetup | 3 comments </li>
-                <li> 5/6 | meetup | 3 comments </li>
-                <li> 5/6 | meetup | 3 comments </li>
-            </ul>
-        </div>
+        <table class="forum-lists">
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <td></td>
+                    <td>date</td>
+                    <td><a href="/posts/{{ post.id }}">{{ post.title }}</a></td>
+                    <td>{{ post.topic }}</td>
+                    <td>comments</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </div>
+        </table>
     </div>
 </div>
 

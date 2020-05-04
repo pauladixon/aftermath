@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> {{ post.title }} details</h1>
-
-<div>
+<div class="details-page">
+  <section>
+    <p class="title"> free forum • {{ post.title }} </p>
     <div>
-      <span>{{ post.title }}</span>
-      <span>{{ post.topic }}</span>
-      <span>{{ post.content }}</span>
+      <p>time • date • {{ post.topic}} • posted by user</p>
+      <p>{{ post.content }}</p>
+      <div>
+          <a href="{% url 'posts_update' post.id %}">edit</a>
+          <a href="{% url 'posts_delete' post.id %}">delete</a>
+      </div>
     </div>
-  </div>
-<div>
-    <a href="{% url 'posts_update' post.id %}">edit</a>
-    <a href="{% url 'posts_delete' post.id %}">delete</a>
+  </section>
+  <a href="{% url 'posts_create' %}">add a forum topic</a>
 </div>
 {% endblock %}
