@@ -6,6 +6,7 @@ body {
     border: solid 10px #535c5c;
     font-family: 'Orator Std', 'Courier New', Courier, monospace;
     color: white;
+    text-transform: lowercase;
 }
 
 main {
@@ -13,16 +14,24 @@ main {
 }
 
 footer.page-footer {
-    max-height: 10vh;
+    max-height: 5vh;
     text-align: right;
     color: #babcbc;
+    border-right: solid 10px #8b9595;
+    border-left: solid 10px #8b9595;
+    border-bottom: solid 10px #8b9595;
 }
 
 .block {
     background-color: #6e7a7a;
-    border: solid 10px #8b9595;
     display: flex;
     align-items: center;
+}
+
+nav {
+    border-top: solid 10px #8b9595;
+    border-right: solid 10px #8b9595;
+    border-left: solid 10px #8b9595;
 }
 
 .grid-container {
@@ -30,6 +39,7 @@ footer.page-footer {
     grid-template-areas:
         'code code code code'
         'challenges challenges forum forum';
+    height: 86vh;
 }
 
 .code-today {
@@ -38,8 +48,6 @@ footer.page-footer {
     border-top: solid 10px #8b9595;
     border-right: solid 10px #8b9595;
     border-left: solid 10px #8b9595;
-    margin: 0px;
-    width: 100vw;
     display: grid;
     justify-content: center;
 }
@@ -48,18 +56,14 @@ footer.page-footer {
     grid-area: challenges;
     background-color: #6e7a7a;
     border-top: solid 10px #8b9595;
-    border-right: solid 10px #8b9595;
+    border-bottom: solid 10px #8b9595;
     border-left: solid 10px #8b9595;
-    margin: 0px;
 }
 
 .free-forum {
     grid-area: forum;
     background-color: #6e7a7a;
-    border-top: solid 10px #8b9595;
-    border-right: solid 10px #8b9595;
-    border-left: solid 10px #8b9595;
-    margin: 0px;
+    border: solid 10px #8b9595;
 }
 
 
@@ -70,7 +74,7 @@ footer.page-footer {
     justify-content: center;
     align-items: center;
     height: 30px;
-    font-size: 15px;
+    font-size: 16px;
     letter-spacing: .1em;
     color: #535c5c;
 }
@@ -103,4 +107,28 @@ footer.page-footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.index-page {
+    background-color: #6e7a7a;
+    border: solid 10px #8b9595;
+    height: 86vh;
+}
+
+.details-page {
+    background-color: #6e7a7a;
+    border: solid 10px #8b9595;
+    height: 86vh;
+}
+
+.form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orator Std', 'Courier New', Courier, monospace;
+}
+
+.btn {
+    background-color: #535c5c;
+    font-family: 'Orator Std', 'Courier New', Courier, monospace;
 }

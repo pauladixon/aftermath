@@ -21,7 +21,6 @@
                         {% if user.is_authenticated %}
                             <li><a href="{% url 'challenges_index' %}">all challenges</a></li>
                             <li><a href="{% url 'posts_index' %}">free forum</a></li>
-                            <li><a href="{% url 'posts_create' %}">add a forum topic</a></li>
                             <li><a href="{% url 'logout' %}">log out</a></li>
                         {% else %}
                             <li><a href="{% url 'signup' %}">sign up</a></li>
@@ -31,7 +30,7 @@
                 </div>
             </nav>
         </header>
-        <main class='container'>
+        <main>
             {% block content %}
             {% endblock %}
         </main>
