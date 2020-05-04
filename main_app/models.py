@@ -2,8 +2,6 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 
-from .models import Category
-
 class Challenge(models.Model):
     name = models.CharField(max_length=100)
 
