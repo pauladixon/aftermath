@@ -9,7 +9,7 @@
         <tr>
           <td></td>
           <td>date</td>
-          <td><a href="/posts/{{ post.id }}">{{ post.title }}</a></td>
+          <td><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
           <td>{{ post.topic }}</td>
           <td>comments</td>
         </tr>
@@ -17,6 +17,6 @@
       </tbody>
     </div>
   </table>
-  <a href="{% url 'posts_create' %}">add a forum topic</a>
+  <a class='links' href="{% url 'posts_create' %}">add a forum topic</a>
 </div>
 {% endblock %}

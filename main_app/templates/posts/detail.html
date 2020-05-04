@@ -4,15 +4,15 @@
 <div class="details-page">
   <section>
     <p class="title"> free forum • {{ post.title }} </p>
-    <div>
-      <p>time • date • {{ post.topic }} • posted by user</p>
+    <div class='show-post'>
+      <p>time • date • {{ post.topic}} • posted by user</p>
       <p>{{ post.content }}</p>
       <div>
-          <a href="{% url 'posts_update' post.id %}">edit</a>
-          <a href="{% url 'posts_delete' post.id %}">delete</a>
+          <a class='links' href="{% url 'posts_update' post.id %}">edit</a>
+          <a class='links' href="{% url 'posts_delete' post.id %}">delete</a>
       </div>
     </div>
   </section>
-  <a href="{% url 'posts_create' %}">add a forum topic</a>
+  <a class='links' href="{% url 'posts_create' %}">add a forum topic</a>
 </div>
 {% endblock %}
