@@ -5,9 +5,9 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Challenge, Post
+from .models import Challenge, Post, PostComment
+from .forms import PostCommentForm
 
-# from .forms import CommentForm
 
 
 def home(request):
@@ -47,6 +47,15 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
 class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = '/posts/'
+
+def post_add_comment(request, post_id):
+    form = PostCommentForm(request.POST)
+    if form.is_valid():
+        new_comment = form.save(commit=False)
+        new_comment.post_id = post_id 
+        new_comment.user_id = request.user.id 
+        new_comment.save()
+    return redirect('posts_detail', post_id=post_id)
 
 def signup(request):
     error_message = ''
