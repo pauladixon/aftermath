@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 
+
 class Challenge(models.Model):
     name = models.CharField(max_length=100)
     # add a class method
@@ -21,3 +22,12 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('posts_detail', kwargs={'post_id': self.id})
+
+
+class PostComment(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    content = models.TextField(max_length=200)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+   
