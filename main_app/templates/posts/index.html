@@ -8,7 +8,7 @@
       {% for post in posts %}
         <tr>
           <td></td>
-          <td>date</td>
+          <td>{{ post.created_at }}</td>
           <td><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
           <td>{{ post.topic }}</td>
           <td>comments</td>
