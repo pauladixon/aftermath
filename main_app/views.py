@@ -29,7 +29,13 @@ def posts_index(request):
 @login_required
 def posts_detail(request, post_id):
     post = Post.objects.get(id=post_id)
-    return render(request, 'posts/detail.html', { 'post': post})
+    post_comment_form = PostCommentForm()
+    return render(request, 
+        'posts/detail.html', { 
+            'post': post,
+            'post_comment_form': post_comment_form,
+            'user': request.user
+        })
 
 
 class PostCreate(LoginRequiredMixin, CreateView):
@@ -48,6 +54,7 @@ class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = '/posts/'
 
+@login_required
 def post_add_comment(request, post_id):
     form = PostCommentForm(request.POST)
     if form.is_valid():
@@ -72,31 +79,4 @@ def signup(request):
     return render(request, 'registration/signup.html', context)      
 
 
-# def list_of_post(request):
-#     post = Post.objects.filter(status = 'published')
-#     template = 'main_app/blog/list_of_post.html'
-#     context = { 'post': post }
-#     return render(request, template, context)
-
-# def post_detail(request, slug):
-#     post = get_object_or_404(Post, slug=slug)
-#     template = 'main_app/blog/post_detail.html'
-#     context = { 'post': post }
-#     return render(request, template, context)
-
-
-# def add_comment(request, slug):
-#     post = get_object_or_404(Post, slug=slug)
-#     if request.method == 'POST':
-#         form = CommentForm(request.POST)
-#         if form.is_valid():
-#             comment = form.save(commit=False)
-#             comment.post = post
-#             comment.save()
-#             return redirect('blog:post_detail', slug=post.slug)
-#         else:
-#             form = CommentForm()
-        
-#         template = 'blog/add_comment.html'
-#         contex = { 'form': form }
-#         return render(request, template, context)           
+           
