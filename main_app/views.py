@@ -5,9 +5,9 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Challenge, Post, Category
+from .models import Challenge, Post
 
-from .forms import CommentForm
+# from .forms import CommentForm
 
 
 def home(request):
@@ -63,31 +63,31 @@ def signup(request):
     return render(request, 'registration/signup.html', context)      
 
 
-def list_of_post(request):
-    post = Post.objects.filter(status = 'published')
-    template = 'main_app/blog/list_of_post.html'
-    context = { 'post': post }
-    return render(request, template, context)
+# def list_of_post(request):
+#     post = Post.objects.filter(status = 'published')
+#     template = 'main_app/blog/list_of_post.html'
+#     context = { 'post': post }
+#     return render(request, template, context)
 
-def post_detail(request, slug):
-    post = get_object_or_404(Post, slug=slug)
-    template = 'main_app/blog/post_detail.html'
-    context = { 'post': post }
-    return render(request, template, context)
+# def post_detail(request, slug):
+#     post = get_object_or_404(Post, slug=slug)
+#     template = 'main_app/blog/post_detail.html'
+#     context = { 'post': post }
+#     return render(request, template, context)
 
 
-def add_comment(request, slug):
-    post = get_object_or_404(Post, slug=slug)
-    if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.post = post
-            comment.save()
-            return redirect('blog:post_detail', slug=post.slug)
-        else:
-            form = CommentForm()
+# def add_comment(request, slug):
+#     post = get_object_or_404(Post, slug=slug)
+#     if request.method == 'POST':
+#         form = CommentForm(request.POST)
+#         if form.is_valid():
+#             comment = form.save(commit=False)
+#             comment.post = post
+#             comment.save()
+#             return redirect('blog:post_detail', slug=post.slug)
+#         else:
+#             form = CommentForm()
         
-        template = 'blog/add_comment.html'
-        contex = { 'form': form }
-        return render(request, template, context)           
+#         template = 'blog/add_comment.html'
+#         contex = { 'form': form }
+#         return render(request, template, context)           
