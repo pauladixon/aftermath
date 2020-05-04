@@ -1,0 +1,23 @@
+{% extendes 'base.html' %}
+
+{% block title %}
+List of blog post
+{% endblock %}
+
+{% block content %}
+  {% for posts in post %}
+
+    <h2>
+      <a href="{{ post.get_absolute_url }}"> {{ posts.title }} </a>
+    </h2>
+
+    <p>Wriiten by {{ posts.author }} on {{ posts.published }} in
+      <a href="{{ posts.category.get_absolute_url }}"> {{ posts.category }} </a>
+    </p>
+
+
+    <p>{{ posts.content|truncatewords:40|linebreaks }}</p>
+
+  {% endfor %}
+
+{% endblock %}
