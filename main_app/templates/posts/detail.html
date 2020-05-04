@@ -5,7 +5,7 @@
   <section>
     <p class="title"> free forum • {{ post.title }} </p>
     <div>
-      <p>time • date • {{ post.topic}} • posted by user</p>
+      <p>time • date • {{ post.topic }} • posted by user</p>
       <p>{{ post.content }}</p>
       <div>
           <a href="{% url 'posts_update' post.id %}">edit</a>
