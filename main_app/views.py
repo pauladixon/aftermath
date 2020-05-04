@@ -54,6 +54,7 @@ class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = '/posts/'
 
+@login_required
 def post_add_comment(request, post_id):
     form = PostCommentForm(request.POST)
     if form.is_valid():

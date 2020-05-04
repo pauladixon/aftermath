@@ -5,25 +5,16 @@
   <section>
     <p class="title"> free forum • {{ post.title }} </p>
     <div class='show-post'>
-      <p>{{ post.created_at }} • {{ post.topic}} • {{ post.user }}</p>
+      <p>{{ post.created_at }} • {{ post.topic }} • {{ post.user }}</p>
       <p>{{ post.content }}</p>
+      {% if user == post.user %}
       <div>
           <a class='links' href="{% url 'posts_update' post.id %}">edit</a>
           <a class='links' href="{% url 'posts_delete' post.id %}">delete</a>
       </div>
+      {% endif %}
     </div>
   </section>
-
-  <!-- COMMENTS FORM -->
-  <div class="col s12 l6">
-    <form action="{% url 'post_add_comment' post.id %}" method="post">
-      {% csrf_token %}
-      {{ post_comment_form.as_p }}
-      <button class="btn waves-effect waves-light cyan lighten-1" type="submit" value="Add Comment" name="action">
-        Add Comment        
-      </button>
-    </form>
-  </div>
 
   <!-- COMMENTS -->
   {% if post.postcomment_set.all %}
@@ -52,5 +43,16 @@
     </table>
   </div>
   {% endif %}
+
+   <!-- COMMENTS FORM -->
+   <div class="col s12 l6">
+    <form action="{% url 'post_add_comment' post.id %}" method="post">
+      {% csrf_token %}
+      {{ post_comment_form.as_p }}
+      <button class="btn waves-effect waves-light cyan lighten-1" type="submit" value="Add Comment" name="action">
+        Add Comment        
+      </button>
+    </form>
+  </div>
 </div>
 {% endblock %}
