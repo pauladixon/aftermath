@@ -64,6 +64,11 @@ def post_add_comment(request, post_id):
         new_comment.save()
     return redirect('posts_detail', post_id=post_id)
 
+class PostCommentDelete(LoginRequiredMixin, DeleteView):
+    model = PostComment
+    success_url = '/posts/'
+
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':
