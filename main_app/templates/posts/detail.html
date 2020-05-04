@@ -5,7 +5,7 @@
   <section>
     <p class="title"> free forum • {{ post.title }} </p>
     <div class='show-post'>
-      <p>time • date • {{ post.topic}} • posted by user</p>
+      <p>{{ post.created_at }} • {{ post.topic}} • {{ post.user }}</p>
       <p>{{ post.content }}</p>
       <div>
           <a class='links' href="{% url 'posts_update' post.id %}">edit</a>
@@ -13,6 +13,44 @@
       </div>
     </div>
   </section>
-  <a class='links' href="{% url 'posts_create' %}">add a forum topic</a>
+
+  <!-- COMMENTS FORM -->
+  <div class="col s12 l6">
+    <form action="{% url 'post_add_comment' post.id %}" method="post">
+      {% csrf_token %}
+      {{ post_comment_form.as_p }}
+      <button class="btn waves-effect waves-light cyan lighten-1" type="submit" value="Add Comment" name="action">
+        Add Comment        
+      </button>
+    </form>
+  </div>
+
+  <!-- COMMENTS -->
+  {% if post.postcomment_set.all %}
+  <div class="container">
+    <table class="striped">
+      <thead>
+        <tr> 
+          <th>Date</th>
+          <th>User</th>
+          <th>Comment</th>         
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for postcomment in post.postcomment_set.all %}
+
+        <tr>
+          <td>{{ postcomment.created_at }}</td>
+          <td>{{ postcomment.user }}</td>
+          <td>{{ postcomment.content }}</td>          
+          <td></td>         
+        </tr>
+
+        {% endfor%}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
 </div>
 {% endblock %}

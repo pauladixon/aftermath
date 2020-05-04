@@ -7,6 +7,7 @@ class Challenge(models.Model):
     name = models.CharField(max_length=100)
 
 class Post(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100)
     topic = models.CharField(max_length=100, default='')
     content = models.TextField(max_length=250, default='')
