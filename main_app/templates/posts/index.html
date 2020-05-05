@@ -12,7 +12,9 @@
           <td><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
           <td>{{ post.topic }}</td>
           <td>{{ post.user }}</td>
-          <td> # comments </td>
+          {% for postcomment in post.postcomment_set.all %}
+            <td> {{ post.postcomments|length }} comments </td>
+          {% endfor %}
         </tr>
       {% endfor %}
       </tbody>
