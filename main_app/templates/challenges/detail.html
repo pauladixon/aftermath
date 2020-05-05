@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="details-page">
+  <section>
+    <p class="title"> code challenges • {{ challenge.title }} </p>
+    <div class='show-post'>
+      <p>{{ challenge.date }}</p>
+    </div>
+  </section>
+
+  <!-- COMMENTS -->
+  {% if challenge.challengecomment_set.all %}
+  <div class="container">
+    <table class="striped">
+      <thead>
+        <tr> 
+          <th>Date</th>
+          <th>User</th>
+          <th>Comment</th>         
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for challengecomment in challenge.challengecomment_set.all %}
+
+        <tr>
+          <td>{{ challengecomment.created_at }}</td>
+          <td>{{ challengecomment.user }}</td>
+          <td>{{ challengecomment.content }}</td>          
+        {% if user == challengecomment.user %}
+          <td><a href="{% url 'challenge_delete_comment' challengecomment.id %}">x</a></td>         
+        {% else %}
+          <td></td>
+        {% endif %}
+        </tr>
+
+ 
+        {% endfor%}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+   <!-- COMMENTS FORM -->
+   <div class="col s12 l6">
+    <form action="{% url 'challenge_add_comment' challenge.id %}" method="post">
+      {% csrf_token %}
+      {{ challenge_comment_form.as_p }}
+      <button class="btn waves-effect waves-light cyan lighten-1" type="submit" value="add comment" name="action">
+        add comment        
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

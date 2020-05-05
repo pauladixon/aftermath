@@ -54,8 +54,8 @@
     <form action="{% url 'post_add_comment' post.id %}" method="post">
       {% csrf_token %}
       {{ post_comment_form.as_p }}
-      <button class="btn waves-effect waves-light cyan lighten-1" type="submit" value="Add Comment" name="action">
-        Add Comment        
+      <button class="btn waves-effect waves-light cyan lighten-1" type="submit" value="add comment" name="action">
+        add comment        
       </button>
     </form>
   </div>

@@ -3,5 +3,18 @@
 {% block content %}
 <div class="index-page">
   <p class="title">code challenges • index</p>
+  <table>
+    <tbody>
+      {% for challenge in challenges %}
+        <tr>
+          <td></td>
+          <td>{{ challenge.date }}</td>
+          <td><a class='links' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
+          <td>{{ challenge.challengecomment_set.all.count }} comments </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </div>
+  </table>
 </div>
 {% endblock %}
