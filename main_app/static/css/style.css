@@ -1,0 +1,194 @@
+body {
+    background-color: #766763;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    border: solid 10px #535c5c;
+    font-family: 'Orator Std', 'Courier New', Courier, monospace;
+    color: whitesmoke;
+    text-transform: lowercase;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer.page-footer {
+    max-height: 5vh;
+    text-align: right;
+    color: #babcbc;
+    border-right: solid 10px #bab5ae;
+    border-left: solid 10px #bab5ae;
+    border-bottom: solid 10px #bab5ae;
+}
+
+.block {
+    background-color: #766763;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    border-top: solid 10px #bab5ae;
+    border-right: solid 10px #bab5ae;
+    border-left: solid 10px #bab5ae;
+    height: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'code code code code'
+        'challenges challenges forum forum';
+    height: 87.5vh;
+}
+
+.code-today {
+    grid-area: code;
+    background-color: #766763;
+    border-top: solid 10px #bab5ae;
+    border-right: solid 10px #bab5ae;
+    border-left: solid 10px #bab5ae;
+    display: grid;
+    justify-content: center;
+}
+
+.past-challenge {
+    grid-area: challenges;
+    background-color: #766763;
+    border-top: solid 10px #bab5ae;
+    border-bottom: solid 10px #bab5ae;
+    border-left: solid 10px #bab5ae;
+}
+
+.free-forum {
+    grid-area: forum;
+    background-color: #766763;
+    border: solid 10px #bab5ae;
+}
+
+
+.title {
+    background-color: #422a2a;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 16px;
+    letter-spacing: .1em;
+    color: #bab5ae;
+}
+
+.home-titles {
+    background-color: #422a2a;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    font-size: 18px;
+    letter-spacing: .1em;
+    color: #bab5ae;
+}
+
+#today-title {
+    width: 93vw;
+    margin-bottom: 0px;
+}
+
+.code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-block {
+    color: black;
+    background-color: #9a958e;
+    margin: 0px 10px;
+    justify-content: center;
+    height: 30.5vh;
+    width: 45vw;;
+    padding: 5px;
+}
+
+.code-snippet {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 15px;
+    background-color: #331f20;
+    display: grid;
+    padding: 0px 10px;
+    margin: 10px;
+    height: 18vh;
+}
+
+.indent {
+    margin-left: 20px;
+    margin-top: 0px;
+    height: 50px;
+}
+
+.code-intro {
+    padding: 0px 10px;
+}
+
+.forum-lists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index-page {
+    background-color: #766763;
+    border: solid 10px #bab5ae;
+    height: 87.5vh;
+}
+
+.details-page {
+    background-color: #766763;
+    border: solid 10px #bab5ae;
+    height: 87.5vh;
+
+}
+
+.form {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orator Std', 'Courier New', Courier, monospace;
+}
+
+.show-post {
+    background-color: #331f20;
+    color: #aba69f;
+    margin: 15px;
+    padding: 10px;
+    display: grid;
+}
+
+.btn {
+    background-color: #535c5c;
+    font-family: 'Orator Std', 'Courier New', Courier, monospace;
+}
+
+.btn:hover { 
+    background-color: rgb(98, 111, 111);
+}
+
+a {
+    color: white;
+    font-weight: bolder;
+}
+
+.links {
+    padding: 10px;
+    margin: 5px;
+}
+
+.links:hover:not(.active) {
+    font-weight: normal;
+    background-color: #535c5c;
+    padding: 10px;
+  }

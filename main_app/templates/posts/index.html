@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="index-page">
+  <p class="title">free forum • index</p>
+  <table>
+    <tbody>
+      {% for post in posts %}
+        <tr>
+          <td></td>
+          <td>{{ post.created_at }}</td>
+          <td><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
+          <td>{{ post.topic }}</td>
+          <td>{{ post.user }}</td>
+          <td> # comments </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </div>
+  </table>
+  <a class='links' href="{% url 'posts_create' %}">add a forum topic</a>
+</div>
+{% endblock %}

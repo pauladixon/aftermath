@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="details-page">
+  <section>
+    <p class="title"> free forum • {{ post.title }} </p>
+    <div class='show-post'>
+      <p>{{ post.created_at }} • {{ post.topic }} • {{ post.user }}</p>
+      <p>{{ post.content }}</p>
+      {% if user == post.user %}
+      <div>
+          <a class='links' href="{% url 'posts_update' post.id %}">edit</a>
+          <a class='links' href="{% url 'posts_delete' post.id %}">delete</a>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- COMMENTS -->
+  {% if post.postcomment_set.all %}
+  <div class="container">
+    <table class="striped">
+      <thead>
+        <tr> 
+          <th>Date</th>
+          <th>User</th>
+          <th>Comment</th>         
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for postcomment in post.postcomment_set.all %}
+
+        <tr>
+          <td>{{ postcomment.created_at }}</td>
+          <td>{{ postcomment.user }}</td>
+          <td>{{ postcomment.content }}</td>          
+        {% if user == postcomment.user %}
+          <td><a href="{% url 'post_delete_comment' postcomment.id %}">x</a></td>         
+        {% else %}
+          <td></td>
+        {% endif %}
+        </tr>
+
+ 
+        {% endfor%}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+   <!-- COMMENTS FORM -->
+   <div class="col s12 l6">
+    <form action="{% url 'post_add_comment' post.id %}" method="post">
+      {% csrf_token %}
+      {{ post_comment_form.as_p }}
+      <button class="btn waves-effect waves-light cyan lighten-1" type="submit" value="Add Comment" name="action">
+        Add Comment        
+      </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

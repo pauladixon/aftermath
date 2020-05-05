@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="grid-container">
+    <div class="code-today">
+        <p class="home-titles" id="today-title">today's challenge</p>
+        <div class="code-container">
+            <div class="code-block">
+                <div class="code-intro">
+                    <p>The code does not execute properly. Try to figure out why.</p>
+                </div>
+                <div class="code-snippet">
+                    <p>def multiply(a,b):</p>
+                    <p class="indent">a*b</p>
+                </div>
+            </div>
+        </div>
+        <div class="code-container">
+            <p>5/7 | solution forum | 4 comments</p>
+        </div>
+    </div>
+
+    <div class="past-challenge left">
+        <p class="home-titles">past challenges</p>
+        <table class="forum-lists">
+            <tbody>
+                <tr>
+                    <td>date</td>
+                    <td>challenge topic</li>
+                    <td>comments</td>
+                </tr>
+                <tr>
+                    <td>date</td>
+                    <td>challenge topic</li>
+                    <td>comments</td>
+                </tr>
+                <tr>
+                    <td>date</td>
+                    <td>challenge topic</li>
+                    <td>comments</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="free-forum right">
+        <p class="home-titles">free forum</p>
+        <table class="forum-lists">
+            <tbody>
+                {% for post in posts %}
+                <tr>
+                    <td></td>
+                    <td>date</td>
+                    <td><a href="/posts/{{ post.id }}">{{ post.title }}</a></td>
+                    <td>{{ post.topic }}</td>
+                    <td>comments</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </div>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

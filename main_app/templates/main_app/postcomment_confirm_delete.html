@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="details-page">
+  <p class="title">delete comment</p>
+
+  <p>are you sure you want to delete your comment?</p>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="delete" class="btn">
+    <a href="{% url 'posts_detail' postcomment.id %}">cancel</a>
+  </form>
+</div>
+{% endblock %}
