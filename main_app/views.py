@@ -5,8 +5,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Challenge, Post, PostComment
-from .forms import PostCommentForm
+from .models import Challenge, ChallengeComment, Post, PostComment
+from .forms import ChallengeCommentForm, PostCommentForm
 
 
 
@@ -37,7 +37,6 @@ def posts_detail(request, post_id):
             'user': request.user
         })
 
-
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'topic', 'content']
@@ -67,6 +66,33 @@ def post_add_comment(request, post_id):
 class PostCommentDelete(LoginRequiredMixin, DeleteView):
     model = PostComment
     success_url = '/posts/'
+
+
+@login_required
+def challenges_detail(request, challenge_id):
+    challenge = Challenge.objects.get(id=challenge_id)
+    challenge_comment_form = ChallengeCommentForm()
+    return render(request, 
+        'challenges/detail.html', { 
+            'challenge': challenge,
+            'challenge_comment_form': challenge_comment_form,
+            'user': request.user
+        })
+
+@login_required
+def challenge_add_comment(request, challenge_id):
+    form = ChallengeCommentForm(request.POST)
+    if form.is_valid():
+        new_comment = form.save(commit=False)
+        new_comment.challenge_id = challenge_id 
+        new_comment.user_id = request.user.id 
+        new_comment.save()
+    return redirect('challenges_detail', challenge_id=challenge_id)
+
+class ChallengeCommentDelete(LoginRequiredMixin, DeleteView):
+    model = ChallengeComment
+    success_url = '/challenges/'
+
 
 def signup(request):
     error_message = ''
