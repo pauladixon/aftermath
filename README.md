@@ -2,15 +2,19 @@ Just testing
 
 ## AFTERMATH
 
-[Click on Link to view GitHub Repo](https://github.com/pauladixon/aftermath)
+[Click on Link to view Pitch Deck](https://docs.google.com/presentation/d/1HjGEziiYzdeLePbSY8IKrARZSa7_am0naTw4eNBSJws/edit?usp=sharing)
 
 [Click on Link to Open Trello Board](https://trello.com/b/ajHjwUkv/aftermath)
 
 [Click on Link to Open ERD](https://app.diagrams.net/#G1hmPNQ0AUTSyG87ymW0KljbBRQCKrdCIy)
 
-# _Screenshot(s):
+![ERD Screenshot](https://i.imgur.com/ihDPa6X.png)
 
-![ERD Screenshot]()
+All wireframes for project are in the attached folder above.
+
+
+
+# _Screenshot(s):
 
 #### _Class Group Project 3, April 2020_
 
