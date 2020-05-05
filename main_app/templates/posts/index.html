@@ -11,7 +11,8 @@
           <td>{{ post.created_at }}</td>
           <td><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
           <td>{{ post.topic }}</td>
-          <td>comments</td>
+          <td>{{ post.user }}</td>
+          <td> # comments </td>
         </tr>
       {% endfor %}
       </tbody>
