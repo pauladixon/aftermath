@@ -68,7 +68,6 @@ class PostCommentDelete(LoginRequiredMixin, DeleteView):
     model = PostComment
     success_url = '/posts/'
 
-
 def signup(request):
     error_message = ''
     if request.method == 'POST':
