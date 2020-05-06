@@ -17,9 +17,7 @@
           <td><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
           <td>{{ post.topic }}</td>
           <td>{{ post.user }}</td>
-          {% for postcomment in post.postcomment_set.all %}
-            <td> {{ post.postcomments|length }} comments </td>
-          {% endfor %}
+          <td>{{ post.postcomment_set.all.count }} comments </td>
         </tr>
       {% endfor %}
       </tbody>
