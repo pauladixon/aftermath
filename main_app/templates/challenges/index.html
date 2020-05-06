@@ -3,5 +3,29 @@
 {% block content %}
 <div class="index-page">
   <p class="title">code challenges • index</p>
+
+  <div id="challenges">
+    <iframe src="https://repl.it/@bartsw01/Python-Class-and-Instance?lite=true" id="iFrame">
+    </iframe>
+  </div>
 </div>
+
+<script>
+  const links = [
+    "https://www.youtube.com/embed/O2nhbDOQOiA",
+    "http://www.asmarterwaytolearn.com/js/index-of-exercises.html",
+
+  ];
+
+  let i = 0;
+
+  const renew = setInterval(() => {
+    document.getElementById("iFrame").src = links[i];
+    if (links.length - 1 == i) {
+      i = 0;
+    }
+    else i++;
+  }, 30000);
+</script>
+
 {% endblock %}
