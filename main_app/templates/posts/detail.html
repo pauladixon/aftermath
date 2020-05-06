@@ -8,11 +8,49 @@
       <p>{{ post.created_at }} • {{ post.topic }} • {{ post.user }}</p>
       <p>{{ post.content }}</p>
       {% if user == post.user %}
-      <div>
-          <a class='links' href="{% url 'posts_update' post.id %}">edit</a>
-          <a class='links' href="{% url 'posts_delete' post.id %}">delete</a>
-      </div>
+        <div>
+            <a class='links' href="{% url 'posts_update' post.id %}">edit</a>
+            <a class='links' href="{% url 'posts_delete' post.id %}">delete</a>
+        </div>
+        <p>available categories</p>
+        {% if categories.count %}
+          {% for category in categories.all %}
+            <div>
+              <div>
+                <span>
+                  {{category.category}}
+                </span>
+              </div>
+              <div>
+                <form action="{% url 'assoc_category' post.id category.id %}" method='post'>
+                  {% csrf_token %}
+                  <button type='submit' class="btn">add</button>
+                </form>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
       {% endif %}
+      <p>categories</p>
+      {% if post.categories.count %}
+        {% for category in post.categories.all %}
+          <div>
+            <div>
+              <span>
+                {{category.category}}
+              </span>
+            </div>
+            <div>
+              <form action="{% url 'unassoc_category' post.id category.id %}" method='post'>
+                {% csrf_token %}
+                <button type='submit' class='btn'>remove</button>
+              </form>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+      <a href="{% url 'categories_create' %}">add a new category</a>
+      <a href="{% url 'categories_index' %}">see all categories</a>
     </div>
   </section>
 
@@ -60,4 +98,6 @@
     </form>
   </div>
 </div>
+
+
 {% endblock %}

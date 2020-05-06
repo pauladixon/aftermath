@@ -15,5 +15,10 @@ urlpatterns = [
     path('posts/<int:pk>/delete/', views.PostDelete.as_view(), name='posts_delete'),
     path('posts/<int:post_id>/post_add_comment/', views.post_add_comment, name='post_add_comment'),
     path('posts/comment/<int:pk>/delete/', views.PostCommentDelete.as_view(), name='post_delete_comment'),
+    path('posts/<int:post_id>/assoc_category/<int:category_id>/', views.assoc_category, name='assoc_category'),
+    path('posts/<int:post_id>/unassoc_catetory/<int:category_id>/', views.unassoc_category, name='unassoc_category'),
+    path('categories/', views.CategoryList.as_view(), name='categories_index'),
+    path('categories/<int:pk>/', views.CategoryDetail.as_view(), name='categories_detail'),
+    path('categories/create/', views.CategoryCreate.as_view(), name='categories_create'),
     path('accounts/signup/', views.signup, name='signup'),
 ]

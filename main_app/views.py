@@ -5,9 +5,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Challenge, ChallengeComment, Post, PostComment
+from .models import Challenge, ChallengeComment, Post, PostComment, Category
 from .forms import ChallengeCommentForm, PostCommentForm
-
 
 
 def home(request):
@@ -34,11 +33,12 @@ def posts_index(request):
 @login_required
 def posts_detail(request, post_id):
     post = Post.objects.get(id=post_id)
+    categories_posts_not_in = Post.objects.exclude(id__in = post.categories.all().values_list('id'))
     post_comment_form = PostCommentForm()
-    return render(request, 
-        'posts/detail.html', { 
+    return render(request, 'posts/detail.html', { 
             'post': post,
             'post_comment_form': post_comment_form,
+            'categories': categories_posts_not_in,
             'user': request.user
         })
 
@@ -98,6 +98,25 @@ class ChallengeCommentDelete(LoginRequiredMixin, DeleteView):
     model = ChallengeComment
     success_url = '/challenges/'
 
+@login_required
+def assoc_category(request, post_id, category_id):
+    Post.objects.get(id=post_id).categories.add(category_id)
+    return redirect('detail', post_id=post_id)
+
+@login_required
+def unassoc_category(request, post_id, category_id):
+    Post.objects.get(id=post_id).categories.remove(category_id)
+    return redirect('detail', post_id=post_id)
+
+class CategoryList(LoginRequiredMixin, ListView):
+    model = Category
+
+class CategoryDetail(LoginRequiredMixin, DetailView):
+    model = Category
+
+class CategoryCreate(LoginRequiredMixin, CreateView):
+    model = Category
+    fields = '__all__'
 
 def signup(request):
     error_message = ''

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="details-page">
+  <section>
+    <p class="title"> post categories </p>
+    {% for category in category_list %}
+        <a href="{% url 'categories_detail' category.id %}">
+            <div class="show-page">
+                <span class="card-title">{{category.category}}</span>
+            </div>
+        </a>
+    {% endfor %}
+    <a href="{% url 'categories_create' %}">add a category</a>
+  </section>
+</div>
+{% endblock %}
