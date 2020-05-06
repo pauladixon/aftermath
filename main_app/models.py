@@ -22,6 +22,7 @@ class ChallengeComment(models.Model):
 
 
 class Post(models.Model):
+    date = models.DateField(default=datetime.datetime.now)
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100)
     topic = models.CharField(max_length=100, default='')

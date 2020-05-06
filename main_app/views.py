@@ -11,7 +11,12 @@ from .forms import ChallengeCommentForm, PostCommentForm
 
 
 def home(request):
-    return render(request, 'home.html')
+    challenges = Challenge.objects.all()
+    posts = Post.objects.all()
+    return render(request, 'home.html', {
+        'challenges': challenges,
+        'posts': posts
+        })
 
 def about(request):
     return render(request, 'about.html')    
