@@ -5,52 +5,63 @@
   <section>
     <p class="title"> free forum • {{ post.title }} </p>
     <div class='show-post'>
-      <p>{{ post.created_at }} • {{ post.topic }} • {{ post.user }}</p>
-      <p>{{ post.content }}</p>
-      {% if user == post.user %}
-        <div>
-            <a class='links' href="{% url 'posts_update' post.id %}">edit</a>
-            <a class='links' href="{% url 'posts_delete' post.id %}">delete</a>
-        </div>
-        <p>available categories</p>
-        {% if categories.count %}
-          {% for category in categories.all %}
-            <div>
-              <div>
-                <span>
-                  {{category.category}}
-                </span>
-              </div>
-              <div>
-                <form action="{% url 'assoc_category' post.id category.id %}" method='post'>
-                  {% csrf_token %}
-                  <button type='submit' class="btn">add</button>
-                </form>
-              </div>
-            </div>
+      <p>{{ post.created_at }} • {{ post.user }}
+        {% if post.categories.count %}
+          {% for category in post.categories.all %}
+          <span>
+            • {{category.name}}
+          </span>
           {% endfor %}
         {% endif %}
-      {% endif %}
-      <p>categories</p>
-      {% if post.categories.count %}
-        {% for category in post.categories.all %}
+      </p>
+      <p>{{ post.content }}</p>
+      <div class="detail-links">
+        {% if user == post.user %}
           <div>
-            <div>
-              <span>
-                {{category.category}}
-              </span>
-            </div>
-            <div>
-              <form action="{% url 'unassoc_category' post.id category.id %}" method='post'>
-                {% csrf_token %}
-                <button type='submit' class='btn'>remove</button>
-              </form>
-            </div>
+              <a class='links' href="{% url 'posts_update' post.id %}">edit</a>
+              <a class='links' href="{% url 'posts_delete' post.id %}">delete</a>
           </div>
-        {% endfor %}
-      {% endif %}
-      <a href="{% url 'categories_create' %}">add a new category</a>
-      <a href="{% url 'categories_index' %}">see all categories</a>
+          <div class="unlinked-categories">
+            {% if categories.count %}
+              {% for category in categories.all %}
+                <div>
+                  <div>
+                    <span>
+                      {{category.name}}
+                    </span>
+                  </div>
+                  <div>
+                    <form action="{% url 'assoc_category' post.id category.id %}" method='post'>
+                      {% csrf_token %}
+                      <button type='submit' class="btn">add</button>
+                    </form>
+                  </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+        {% endif %}
+        <div class='linked-categories'>
+          <p>categories</p>
+          {% if post.categories.count %}
+            {% for category in post.categories.all %}
+              <div>
+                <div>
+                  <span>
+                    {{category.name}}
+                  </span>
+                </div>
+                <div>
+                  <form action="{% url 'unassoc_category' post.id category.id %}" method='post'>
+                    {% csrf_token %}
+                    <button type='submit' class='btn'>x</button>
+                  </form>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
     </div>
   </section>
 

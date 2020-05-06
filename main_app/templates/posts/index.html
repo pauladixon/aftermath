@@ -10,7 +10,13 @@
           <td></td>
           <td>{{ post.created_at }}</td>
           <td><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
-          <td>{{ post.topic }}</td>
+          <td>
+            {% for category in post.categories.all %}
+              <p>
+                {{category.name}}
+              </p>
+            {% endfor %}
+          </td>
           <td>{{ post.user }}</td>
           <td>{{ post.postcomment_set.all.count }} comments </td>
         </tr>

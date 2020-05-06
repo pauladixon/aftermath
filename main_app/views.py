@@ -33,14 +33,14 @@ def posts_index(request):
 @login_required
 def posts_detail(request, post_id):
     post = Post.objects.get(id=post_id)
-    categories_posts_not_in = Post.objects.exclude(id__in = post.categories.all().values_list('id'))
+    categories_posts_not_in = Category.objects.exclude(id__in = post.categories.all().values_list('id'))
     post_comment_form = PostCommentForm()
     return render(request, 'posts/detail.html', { 
-            'post': post,
-            'post_comment_form': post_comment_form,
-            'categories': categories_posts_not_in,
-            'user': request.user
-        })
+        'post': post,
+        'post_comment_form': post_comment_form,
+        'categories': categories_posts_not_in,
+        'user': request.user
+    })
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
@@ -101,12 +101,12 @@ class ChallengeCommentDelete(LoginRequiredMixin, DeleteView):
 @login_required
 def assoc_category(request, post_id, category_id):
     Post.objects.get(id=post_id).categories.add(category_id)
-    return redirect('detail', post_id=post_id)
+    return redirect('posts_detail', post_id=post_id)
 
 @login_required
 def unassoc_category(request, post_id, category_id):
     Post.objects.get(id=post_id).categories.remove(category_id)
-    return redirect('detail', post_id=post_id)
+    return redirect('posts_detail', post_id=post_id)
 
 class CategoryList(LoginRequiredMixin, ListView):
     model = Category

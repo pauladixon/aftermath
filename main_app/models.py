@@ -3,20 +3,6 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 import datetime
 
-CATEGORIES = (
-    ('M', 'meetup'),
-    ('P', 'python'),
-    ('D', 'django'),
-    ('Q', 'postgresql'),
-    ('J', 'javascript'),
-    ('N', 'node.js'),
-    ('E', 'express'),
-    ('G', 'mongodb'),
-    ('H', 'html'),
-    ('C', 'css'),
-    ('O', 'other'),
-)
-
 class Challenge(models.Model):
     date = models.DateField(default=datetime.datetime.now)
     title = models.CharField(max_length=100)
@@ -34,10 +20,10 @@ class ChallengeComment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Category(models.Model):
-    category = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.category
+        return self.name
     
     def get_absolute_url(self):
         return reverse('categories_detail', kwargs={'pk': self.id})
@@ -46,7 +32,6 @@ class Post(models.Model):
     date = models.DateField(default=datetime.datetime.now)
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100)
-    topic = models.CharField(max_length=100, default='')
     content = models.TextField(max_length=250, default='')
     categories = models.ManyToManyField(Category)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
