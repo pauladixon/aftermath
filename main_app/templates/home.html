@@ -16,36 +16,35 @@
             </div>
         </div>
         <div class="code-container">
-            <p>5/7 | solution forum | 4 comments</p>
+            <p>5/7 | <a class='links' href="">js solution</a> |
+            <a class='links' href="">py solution</a> | 4 comments</p>
         </div>
     </div>
 
-    <div class="past-challenge left">
+    <div class="past-challenge">
         <p class="home-titles">past challenges</p>
-        <table class="forum-lists">
+        <table class="forum-lists" class="responsive-table">
             <tbody>
                 {% for challenge in challenges %}
                 <tr>
-                    <td></td>
-                    <td>{{ challenge.date }}</td>
-                    <td><a class='links' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
-                    <td>{{ challenge.challengecomment_set.all.count }} comments </td>
+                    <td class='home-tables'>{{ challenge.date }}</td>
+                    <td class='home-tables'><a class='links' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
+                    <td class='home-tables'>{{ challenge.challengecomment_set.all.count }} comments </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
 
-    <div class="free-forum right">
+    <div class="free-forum">
         <p class="home-titles">free forum</p>
-        <table class="forum-lists">
+        <table class="forum-lists" class="responsive-table">
                 <tbody>
                     {% for post in posts %}
                     <tr>
-                        <td></td>
-                        <td>{{ post.date }}</td>
-                        <td><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
-                        <td>{{ post.postcomment_set.all.count }} comments </td>
+                        <td class='home-tables'>{{ post.date }}</td>
+                        <td class='home-tables'><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
+                        <td class='home-tables'>{{ post.postcomment_set.all.count }} comments </td>
                     </tr>
                     {% endfor %}
                 </tbody>

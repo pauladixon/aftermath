@@ -7,18 +7,18 @@
     <tbody>
       {% for post in posts %}
         <tr>
-          <td></td>
-          <td>{{ post.created_at }}</td>
-          <td><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
-          <td>
+          <td class='tables'>{{ post.created_at }}</td>
+          <td class='tables'><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
+          <td class='tables'>
             {% for category in post.categories.all %}
-              <p>
+              <span class='category'>
                 {{category.name}}
-              </p>
+              </span>
             {% endfor %}
           </td>
-          <td>{{ post.user }}</td>
-          <td>{{ post.postcomment_set.all.count }} comments </td>
+          <td class='tables'>{{ post.user }}</td>
+          <td class='tables'>{{ post.postcomment_set.all.count }} comments </td>
+          <td></td>
         </tr>
       {% endfor %}
       </tbody>

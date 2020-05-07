@@ -44,7 +44,7 @@ def posts_detail(request, post_id):
 
 class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['title', 'topic', 'content']
+    fields = ['title', 'content']
 
     def form_valid(self, form):
       form.instance.user = self.request.user  
@@ -52,7 +52,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
-    fields = ['topic', 'content']
+    fields = ['title', 'content']
 
 class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post

@@ -32,7 +32,7 @@ class Post(models.Model):
     date = models.DateField(default=datetime.datetime.now)
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100)
-    content = models.TextField(max_length=250, default='')
+    content = models.TextField(max_length=500, default='')
     categories = models.ManyToManyField(Category)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 

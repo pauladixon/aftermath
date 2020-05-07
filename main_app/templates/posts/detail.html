@@ -5,93 +5,76 @@
   <section>
     <p class="title"> free forum • {{ post.title }} </p>
     <div class='show-post'>
-      <p>{{ post.created_at }} • {{ post.user }}
-        {% if post.categories.count %}
-          {% for category in post.categories.all %}
-          <span>
-            • {{category.name}}
-          </span>
-          {% endfor %}
-        {% endif %}
-      </p>
-      <p>{{ post.content }}</p>
-      <div class="detail-links">
-        {% if user == post.user %}
-          <div>
-              <a class='links' href="{% url 'posts_update' post.id %}">edit</a>
-              <a class='links' href="{% url 'posts_delete' post.id %}">delete</a>
-          </div>
-          <div class="unlinked-categories">
-            {% if categories.count %}
-              {% for category in categories.all %}
-                <div>
-                  <div>
-                    <span>
-                      {{category.name}}
-                    </span>
-                  </div>
-                  <div>
-                    <form action="{% url 'assoc_category' post.id category.id %}" method='post'>
-                      {% csrf_token %}
-                      <button type='submit' class="btn">add</button>
-                    </form>
-                  </div>
-                </div>
+      <div class="top-line">
+        <span>{{ post.created_at }} • {{ post.user }}
+          {% if post.categories.count %}
+            {% for category in post.categories.all %}
+            <span>• {{category.name}}</span>
+            {% endfor %}
+          {% endif %}
+        </span>
+        <span class='right'>
+          {% if user == post.user %}
+            <a class='links' href="{% url 'posts_update' post.id %}">edit post</a>
+            <a class='links' href="{% url 'posts_delete' post.id %}">delete post</a>
+          {% endif %}
+        </span>
+      </div>
+      <p class='content'>{{ post.content }}</p>
+      <div>
+          <div class="categories">
+            {% if post.categories.count %}
+              {% for category in post.categories.all %}
+                <form class='inline-form' action="{% url 'unassoc_category' post.id category.id %}" method='post'>
+                  {% csrf_token %}
+                  <button type='submit' class='small' class='btn'>◉</button>
+                  <span class='category'>{{category.name}}</span>
+                </form>
               {% endfor %}
             {% endif %}
           </div>
-        {% endif %}
-        <div class='linked-categories'>
-          <p>categories</p>
-          {% if post.categories.count %}
-            {% for category in post.categories.all %}
-              <div>
-                <div>
-                  <span>
-                    {{category.name}}
-                  </span>
-                </div>
-                <div>
-                  <form action="{% url 'unassoc_category' post.id category.id %}" method='post'>
+          <br>
+          <div class="categories">
+            {% if user == post.user %}
+              {% if categories.count %}
+                {% for category in categories.all %}
+                  <form class='inline-form' action="{% url 'assoc_category' post.id category.id %}" method='post'>
                     {% csrf_token %}
-                    <button type='submit' class='btn'>x</button>
+                  <button type='submit' class='small' class="btn">〇</button>
+                  <span class='category'>{{category.name}}</span>
                   </form>
-                </div>
-              </div>
-            {% endfor %}
-          {% endif %}
-        </div>
+                {% endfor %}
+              {% endif %}
+            {% endif %}
+          </div>
       </div>
     </div>
   </section>
 
   <!-- COMMENTS -->
   {% if post.postcomment_set.all %}
-  <div class="container">
-    <table class="striped">
+  <div class="comment-container">
+    <table class="striped" class="responsive-table">
       <thead>
         <tr> 
-          <th>Date</th>
-          <th>User</th>
-          <th>Comment</th>         
-          <th>Delete</th>
+          <th class='tables'>Date</th>
+          <th class='tables'>User</th>
+          <th class='tables'>Comment</th>         
+          <th class='tables'>Delete</th>
         </tr>
       </thead>
       <tbody>
         {% for postcomment in post.postcomment_set.all %}
-
-        <tr>
-          <td>{{ postcomment.created_at }}</td>
-          <td>{{ postcomment.user }}</td>
-          <td>{{ postcomment.content }}</td>          
-        {% if user == postcomment.user %}
-          <td><a href="{% url 'post_delete_comment' postcomment.id %}">x</a></td>         
-        {% else %}
-          <td></td>
-        {% endif %}
-        </tr>
-
- 
+          <tr>
+            <td class='tables'>{{ postcomment.created_at }}</td>
+            <td class='tables'>{{ postcomment.user }}</td>
+            <td class='tables'>{{ postcomment.content }}</td>          
+          {% if user == postcomment.user %}
+            <td class='tables'><a href="{% url 'post_delete_comment' postcomment.id %}">x</a></td>         
+          {% else %}
+            <td></td>
+          {% endif %}
+          </tr> 
         {% endfor%}
       </tbody>
     </table>
@@ -99,16 +82,14 @@
   {% endif %}
 
    <!-- COMMENTS FORM -->
-   <div class="col s12 l6">
+   <div class='comment-form'>
     <form action="{% url 'post_add_comment' post.id %}" method="post">
       {% csrf_token %}
       {{ post_comment_form.as_p }}
-      <button class="btn waves-effect waves-light cyan lighten-1" type="submit" value="add comment" name="action">
+      <button class="btn" type="submit" value="add comment" name="action">
         add comment        
       </button>
     </form>
   </div>
 </div>
-
-
 {% endblock %}
