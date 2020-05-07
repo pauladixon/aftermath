@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <div class="details-page">
   <section>
     <p class="title"> code challenges • {{ challenge.title }} </p>
@@ -8,29 +9,7 @@
       <p>{{ challenge.date }}</p>
 
       <!-- REPLIT -->
-      <div id="challenges">
-        <iframe src="http://www.asmarterwaytolearn.com/js/index-of-exercises.html" id="iFrame">
-        </iframe>
-      </div>
-  
-      <script>
-        const links = [
-          "https://www.youtube.com/embed/O2nhbDOQOiA",
-          "http://www.asmarterwaytolearn.com/js/index-of-exercises.html",
-          "https://repl.it/@bartsw01/Python-Class-and-Instance?lite=true"
-  
-        ];
-  
-        let i = 0;
-  
-        const renew = setInterval(() => {
-          document.getElementById("iFrame").src = links[i];
-          if (links.length - 1 == i) {
-            i = 0;
-          }
-          else i++;
-        }, 30000);
-      </script>
+
 
     </div>
   </section>
@@ -40,10 +19,10 @@
   <div class="container">
     <table class="striped">
       <thead>
-        <tr> 
+        <tr>
           <th>Date</th>
           <th>User</th>
-          <th>Comment</th>         
+          <th>Comment</th>
           <th>Delete</th>
         </tr>
       </thead>
@@ -53,12 +32,12 @@
         <tr>
           <td>{{ challengecomment.created_at }}</td>
           <td>{{ challengecomment.user }}</td>
-          <td>{{ challengecomment.content }}</td>          
-        {% if user == challengecomment.user %}
-          <td><a href="{% url 'challenge_delete_comment' challengecomment.id %}">x</a></td>         
-        {% else %}
+          <td>{{ challengecomment.content }}</td>
+          {% if user == challengecomment.user %}
+          <td><a href="{% url 'challenge_delete_comment' challengecomment.id %}">x</a></td>
+          {% else %}
           <td></td>
-        {% endif %}
+          {% endif %}
         </tr>
         {% endfor%}
       </tbody>
@@ -66,13 +45,13 @@
   </div>
   {% endif %}
 
-   <!-- COMMENTS FORM -->
-   <div class="col s12 l6">
+  <!-- COMMENTS FORM -->
+  <div class="col s12 l6">
     <form action="{% url 'challenge_add_comment' challenge.id %}" method="post">
       {% csrf_token %}
       {{ challenge_comment_form.as_p }}
       <button class="btn waves-effect waves-light cyan lighten-1" type="submit" value="add comment" name="action">
-        add comment        
+        add comment
       </button>
     </form>
   </div>

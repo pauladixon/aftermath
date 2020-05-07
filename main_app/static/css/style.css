@@ -194,10 +194,71 @@ a {
   }
 
 /* |||||||||||||||| CHALLENGES DIV |||||||||||||||| */
-#challenges, iframe {
-  height: 725px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  border: solid 10px #bab5ae;
+  color: whitesmoke;
+  text-transform: lowercase;
+  text-shadow: 1px 1px 1px black;
+}
+
+header,
+main,
+.title,
+#challenges,
+footer {
+  box-shadow: 3px -3px 5px black;
+}
+
+.block {
+  background-color: rgb(190, 122, 98);
+}
+
+a.left {
+  font: 60px snell roundhand;
+  z-index: 100;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 60px;
+  text-shadow: 1px 1px 1px black;
+}
+
+nav ul a:hover {
+  background-color: rgba(12, 12, 12, 0.38);
+}
+
+.index-page {
+  background-image: url('https://cdn.shopify.com/s/files/1/0378/7109/products/IMG_1689_2019c671-30c2-44ff-8d2b-ea2b12d2942f_1024x1024.jpg?v=1528909343');
+  border: solid 10px #bab5ae;
+  height: 87.5vh;
+}
+
+.title {
+  background-color: rgb(198, 188, 179);
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 16px;
+  letter-spacing: .1em;
+  color: rgb(92, 89, 79);
+  text-shadow: 1px 1px 1px black;
+  border: 5px double;
+}
+
+#challenges {
+  height: 625px;
   width: 90%;
-  margin: auto;
+  margin: 4em auto 0;
+  border: 10px solid rgb(191, 122, 95);
 }
 
 iframe {
