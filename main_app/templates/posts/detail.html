@@ -29,9 +29,9 @@
           <div class="center-align">no photos uploaded</div>
         {% endfor %}
         </div>      
-        <form action="{% url 'add_photo' post.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+        <form class="upload_photo" action="{% url 'add_photo' post.id %}" enctype="multipart/form-data" method="POST">
           {% csrf_token %}
-          <input type="file" name="photo-file">
+          <input class="photoChooseFile" type="file" name="photo-file">
           <br><br>
           <input type="submit" class="btn" value="upload photo">
         </form>
