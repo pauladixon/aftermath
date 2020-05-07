@@ -103,7 +103,7 @@ footer.page-footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45px;
+    height: 50px;
     font-size: 18px;
     letter-spacing: .1em;
     color: #bab5ae;
@@ -293,15 +293,22 @@ thead {
     font-size: 16px;
 }
 
-/* |||||||||||||||| CHALLENGES DIV |||||||||||||||| */
 * {
   box-sizing: border-box;
 }
 
+#challenges { 
+    height: 450px;
+    width: 80%;
+    margin: auto;
+    margin-top: 25px;
+}
 
 #MySelectMenu {
   display: block;
+  width: 175px;
   clear: both;
+  margin-right: 5px;
 }
 
 a.left {
@@ -323,3 +330,36 @@ iframe {
         left: 150px;
     }
 }
+<<<<<<< HEAD
+=======
+
+.show-challenge {
+    background-color: #331f20;
+    color: #aba69f;
+    margin: 15px;
+    padding: 10px;
+    height: 600px;
+}
+
+.solutions-select {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+#home-challenges {
+    height: 450px;
+    width: 93%;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.home-challenge {
+    background-color: #331f20;
+    color: #aba69f;
+    margin: -2em auto;
+    padding: 10px;
+    height: 569px;
+    width: 65%;
+}
+>>>>>>> 66a43c2939ae2f6bc1bf4b7167eb6ffe9f3e492c
