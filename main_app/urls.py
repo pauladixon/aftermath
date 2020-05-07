@@ -21,4 +21,5 @@ urlpatterns = [
     path('categories/<int:pk>/', views.CategoryDetail.as_view(), name='categories_detail'),
     path('categories/create/', views.CategoryCreate.as_view(), name='categories_create'),
     path('accounts/signup/', views.signup, name='signup'),
+    path('posts/<int:post_id>/add_photo/', views.add_photo, name='add_photo'),
 ]
