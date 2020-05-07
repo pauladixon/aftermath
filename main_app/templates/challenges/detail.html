@@ -1,26 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <div class="details-page">
   <section>
     <p class="title"> code challenges • {{ challenge.title }} </p>
     <div class='show-post'>
-<<<<<<< HEAD
       <p>{{ challenge.date }}</p>
 
       <!-- REPLIT -->
 
-
-=======
       <div class="top-line">
         <span>{{ challenge.date }}</span>
         <span class='right'>
           <a class='links' href="">js solution</a>
           <a class='links' href="">py solution</a>
+          
+          
         </span>
       </div>
->>>>>>> a3425b08c8210e3b3c1ea48bef3808976c0efe02
     </div>
     <p class='content'>{{ post.content }}</p>
   </section>
@@ -30,24 +27,20 @@
   <div class="comment-container">
     <table class="striped" class="responsive-table">
       <thead>
-<<<<<<< HEAD
         <tr>
           <th>Date</th>
           <th>User</th>
           <th>Comment</th>
           <th>Delete</th>
-=======
         <tr> 
           <th class='tables'>Date</th>
           <th class='tables'>User</th>
           <th class='tables'>Comment</th>         
           <th class='tables'>Delete</th>
->>>>>>> a3425b08c8210e3b3c1ea48bef3808976c0efe02
         </tr>
       </thead>
       <tbody>
         {% for challengecomment in challenge.challengecomment_set.all %}
-<<<<<<< HEAD
 
         <tr>
           <td>{{ challengecomment.created_at }}</td>
@@ -59,7 +52,7 @@
           <td></td>
           {% endif %}
         </tr>
-=======
+
           <tr>
             <td class='tables'>{{ challengecomment.created_at }}</td>
             <td class='tables'>{{ challengecomment.user }}</td>
@@ -70,14 +63,12 @@
             <td></td>
           {% endif %}
           </tr>
->>>>>>> a3425b08c8210e3b3c1ea48bef3808976c0efe02
         {% endfor%}
       </tbody>
     </table>
   </div>
   {% endif %}
 
-<<<<<<< HEAD
   <!-- COMMENTS FORM -->
   <div class="col s12 l6">
     <form action="{% url 'challenge_add_comment' challenge.id %}" method="post">
@@ -85,7 +76,7 @@
       {{ challenge_comment_form.as_p }}
       <button class="btn waves-effect waves-light cyan lighten-1" type="submit" value="add comment" name="action">
         add comment
-=======
+
    <!-- COMMENTS FORM -->
    <div class='comment-form'>
     <form action="{% url 'challenge_add_comment' challenge.id %}" method="post">
@@ -93,7 +84,7 @@
       {{ challenge_comment_form.as_p }}
       <button class="btn" type="submit" value="add comment" name="action">
         add comment        
->>>>>>> a3425b08c8210e3b3c1ea48bef3808976c0efe02
+
       </button>
     </form>
   </div>

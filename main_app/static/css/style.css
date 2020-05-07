@@ -219,9 +219,87 @@ a {
     color: white;
     padding: 10px;
 <<<<<<< HEAD
+<<<<<<< HEAD
+  }
+=======
+}
+
+.detail-links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.small {
+    height: 20px;
+    width: 20px;
+    background-color: #331f20;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border: none;
+    margin-right: 3px;
+    margin-left: 10px;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-left: 50px;
+}
+
+.inline-form {
+    display: flex;
+    margin-left: 8px;
+}
+
+.small:hover:not(.active) {
+    background-color: #535c5c;
+}
+
+.comment-form {
+    margin: 0px 18px;
+}
+
+.comment-container {
+    margin: 0px 18px;
+    color: white;
+}
+
+.tables {   
+    text-align: center;
+    max-width: 500px;
+    padding-right: 10px;
+}
+
+.home-tables {   
+    text-align: center;
+    margin: auto;
+    max-width: 150px;
+}
+
+*:focus {
+    outline: none;
   }
 
-/* |||||||||||||||| CHALLENGES DIV |||||||||||||||| */
+.top-line {
+    flex-flow: row wrap;
+}
+
+thead {
+    color: whitesmoke;
+    font-size: 16px;
+}
+
+>>>>>>> 5403c35f4f351a525a4852dcc48eef557f4ff472
+
+/* |||||||||||||||| CHALLENGES DIV ||||||||||||||||
 * {
   box-sizing: border-box;
 }
@@ -236,11 +314,7 @@ body {
   text-shadow: 1px 1px 1px black;
 }
 
-header,
-main,
-.title,
-#challenges,
-footer {
+header, main, .title, #challenges, footer {
   box-shadow: 3px -3px 5px black;
 }
 
@@ -292,6 +366,7 @@ nav ul a:hover {
 iframe {
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
 =======
 }
 
@@ -368,3 +443,6 @@ thead {
     font-size: 16px;
 >>>>>>> a3425b08c8210e3b3c1ea48bef3808976c0efe02
 }
+=======
+} */
+>>>>>>> 5403c35f4f351a525a4852dcc48eef557f4ff472
