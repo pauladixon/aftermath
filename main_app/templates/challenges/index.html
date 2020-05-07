@@ -6,10 +6,16 @@
     <tbody>
       {% for challenge in challenges %}
         <tr>
+<<<<<<< HEAD
           <td></td>
           <td>{{ challenge.date }}</td>
           <td><a class=‘links’ href=“/challenges/{{ challenge.id }}“>{{ challenge.title }}</a></td>
           <td>{{ challenge.challengecomment_set.all.count }} comments </td>
+=======
+          <td class='tables'>{{ challenge.date }}</td>
+          <td class='tables'><a class='links' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
+          <td class='tables'>{{ challenge.challengecomment_set.all.count }} comments </td>
+>>>>>>> a3425b08c8210e3b3c1ea48bef3808976c0efe02
         </tr>
       {% endfor %}
       </tbody>
