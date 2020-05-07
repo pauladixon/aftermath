@@ -367,3 +367,7 @@ iframe {
         left: 150px;
     }
 }
+
+.challenge {
+    display: flex;
+}
