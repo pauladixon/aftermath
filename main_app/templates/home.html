@@ -3,26 +3,52 @@
 
 <div class="grid-container">
     <div class="code-today">
-        <p class="home-titles" id="today-title">today's challenge</p>
-        <div class="code-container">
-            <div class="code-block">
-                <div class="code-intro">
-                    <p>The code does not execute properly. Try to figure out why.</p>
-                </div>
-                <div class="code-snippet">
-                    <p>def multiply(a,b):</p>
-                    <p class="indent">a*b</p>
-                </div>
+        <p class="home-titles" id="today-title">
+            <a class='links' href="{% url 'challenges_index' %}">today's challenge</a>
+        </p>
+        <div class='home-challenge'>
+            <div class="top-line">
+              <span>{{ challenge.date }}</span>
             </div>
-        </div>
-        <div class="code-container">
-            <p>5/7 | <a class='links' href="">js solution</a> |
-            <a class='links' href="">py solution</a> | 4 comments</p>
-        </div>
+            <!-- REPLIT -->
+            <div id="home-challenges">
+              <iframe src="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true"
+                id="MyFrame">
+              </iframe>
+      
+      
+              <div class="solutions-select">
+                <select id="MySelectMenu" class="btn">
+                  <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true">
+                    Python Challenge
+                  </option>
+                  <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge-Solution?lite=true">
+                    Python Solution
+                  </option>
+                </select>
+                <div id="iframeBtn">
+                  <button class="btn" onClick="newSrc();">submit</button>
+                </div>
+              </div>
+      
+            </div>
+      
+      
+            <script>
+              const newSrc = () => {
+                let e = document.getElementById("MySelectMenu");
+                let newSrc = e.options[e.selectedIndex].value;
+                document.getElementById("MyFrame").src = newSrc;
+              }
+            </script>
+            <!-- REPLIT ENDS -->
+          </div>
     </div>
 
     <div class="past-challenge">
-        <p class="home-titles">past challenges</p>
+        <p class="home-titles">        
+            <a class='links' href="{% url 'challenges_index' %}">past challenges</a>
+        </p>
         <table class="forum-lists" class="responsive-table">
             <tbody>
                 {% for challenge in challenges %}
@@ -37,7 +63,9 @@
     </div>
 
     <div class="free-forum">
-        <p class="home-titles">free forum</p>
+        <p class="home-titles">
+            <a class='links' href="{% url 'posts_index' %}">free forum</a>
+        </p>
         <table class="forum-lists" class="responsive-table">
                 <tbody>
                     {% for post in posts %}
