@@ -294,7 +294,7 @@ thead {
 }
 
 
-/* |||||||||||||||| CHALLENGES DIV |||||||||||||||| */
+/* |||||||||||||||| CHALLENGES DIV ||||||||||||||||
 * {
   box-sizing: border-box;
 }
@@ -309,11 +309,7 @@ body {
   text-shadow: 1px 1px 1px black;
 }
 
-header,
-main,
-.title,
-#challenges,
-footer {
+header, main, .title, #challenges, footer {
   box-shadow: 3px -3px 5px black;
 }
 
@@ -365,4 +361,4 @@ nav ul a:hover {
 iframe {
   width: 100%;
   height: 100%;
-=======
+} */
