@@ -4,7 +4,7 @@
 <div class="details-page">
   <section>
     <p class="title"> code challenges • {{ challenge.title }} </p>
-    <div class='show-post' class='challenge'>
+    <div class='show-challenge'>
       <div class="top-line">
         <span>{{ challenge.date }}</span>
       </div>
@@ -13,8 +13,10 @@
         <iframe src="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true"
           id="MyFrame">
         </iframe>
-        <div>
-          <select id="MySelectMenu">
+
+
+        <div class="solutions-select">
+          <select id="MySelectMenu" class="btn">
             <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true">
               Python Challenge
             </option>
@@ -22,10 +24,9 @@
               Python Solution
             </option>
           </select>
-        </div>
-
-        <div id="iframeBtn">
-          <button onClick="newSrc();">SEE SOLUTIONS</button>
+          <div id="iframeBtn">
+            <button class="btn" onClick="newSrc();">submit</button>
+          </div>
         </div>
 
       </div>
