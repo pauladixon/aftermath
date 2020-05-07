@@ -8,33 +8,42 @@
       <p>{{ challenge.date }}</p>
 
       <!-- REPLIT -->
-      <iframe src="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true"
-        style="width:450px;height:450px;overflow:scroll;" id="MyFrame">
-      </iframe>
-      <select id="MySelectMenu">
-        <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true">
-          Python Challenge
-        </option>
-        <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge-Solution?lite=true">
-          Python Solution
-        </option>
-      </select>
-      <button onClick="newSrc();">SEE SOLUTIONS</button>
-      
+      <div id="challenges">
+        <iframe src="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true"
+          id="MyFrame">
+        </iframe>
+        <div>
+          <select id="MySelectMenu">
+            <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true">
+              Python Challenge
+            </option>
+            <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge-Solution?lite=true">
+              Python Solution
+            </option>
+          </select>
+        </div>
+
+        <div id="iframeBtn">
+          <button onClick="newSrc();">SEE SOLUTIONS</button>
+        </div>
+
+      </div>
+
+
       <script>
-        const  newSrc = () => {
-         let e = document.getElementById("MySelectMenu");
-         let newSrc = e.options[e.selectedIndex].value;
-         document.getElementById("MyFrame").src = newSrc;
+        const newSrc = () => {
+          let e = document.getElementById("MySelectMenu");
+          let newSrc = e.options[e.selectedIndex].value;
+          document.getElementById("MyFrame").src = newSrc;
         }
-       </script>
+      </script>
       <!-- REPLIT ENDS -->
 
       <div class="top-line">
         <span>{{ challenge.date }}</span>
         <span class='right'>
-          <a class='links' href="">js solution</a>
-          <a class='links' href="">py solution</a>
+          <!-- <a class='links' href="">js solution</a>
+          <a class='links' href="">py solution</a> -->
         </span>
       </div>
     </div>
