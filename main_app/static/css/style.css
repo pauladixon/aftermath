@@ -5,7 +5,7 @@ body {
     flex-direction: column;
     border: solid 10px #535c5c;
     font-family: 'Orator Std', 'Courier New', Courier, monospace;
-    color: whitesmoke;
+    color: #c5bfbe;
     text-transform: lowercase;
 }
 
@@ -28,11 +28,28 @@ footer.page-footer {
     align-items: center;
 }
 
-nav {
+.nav-wrapper {
+    background-color: #766763;
     border-top: solid 10px #bab5ae;
     border-right: solid 10px #bab5ae;
     border-left: solid 10px #bab5ae;
-    height: 50px;
+    box-shadow: none!important;
+    min-height: 75px;
+}
+
+.brand-logo {
+    padding: 10px;
+    text-align: right;
+    color: whitesmoke;
+}
+
+.brand-logo:hover:not(.active) {
+    background-color: #422a2a;
+    padding-right: 40px;
+}
+
+.right {
+    margin: 0px 20px;
 }
 
 .grid-container {
@@ -40,7 +57,7 @@ nav {
     grid-template-areas:
         'code code code code'
         'challenges challenges forum forum';
-    height: 87.5vh;
+    min-height: 87.5vh;
 }
 
 .code-today {
@@ -106,9 +123,9 @@ nav {
 .code-block {
     color: black;
     background-color: #9a958e;
-    margin: 0px 10px;
+    margin: 20px 10px 0px 10px;
     justify-content: center;
-    height: 30.5vh;
+    min-height: 30.5vh;
     width: 45vw;;
     padding: 5px;
 }
@@ -121,7 +138,7 @@ nav {
     display: grid;
     padding: 0px 10px;
     margin: 10px;
-    height: 18vh;
+    min-height: 18vh;
 }
 
 .indent {
@@ -143,13 +160,13 @@ nav {
 .index-page {
     background-color: #766763;
     border: solid 10px #bab5ae;
-    height: 87.5vh;
+    min-height: 87.5vh;
 }
 
 .details-page {
     background-color: #766763;
     border: solid 10px #bab5ae;
-    height: 87.5vh;
+    min-height: 87.5vh;
 
 }
 
@@ -158,6 +175,7 @@ nav {
     justify-content: center;
     align-items: center;
     font-family: 'Orator Std', 'Courier New', Courier, monospace;
+    margin: 50px 200px;
 }
 
 .show-post {
@@ -168,13 +186,21 @@ nav {
     display: grid;
 }
 
-.btn {
-    background-color: #535c5c;
-    font-family: 'Orator Std', 'Courier New', Courier, monospace;
+.content {
+    color: white;
+    text-align: center;
+    margin: 60px;
 }
 
-.btn:hover { 
-    background-color: rgb(98, 111, 111);
+.btn {
+    background-color: #422a2a;
+    font-family: 'Orator Std', 'Courier New', Courier, monospace;
+    box-shadow: none!important;
+}
+
+.btn:hover:not(.active) {
+    background-color: #535c5c;
+    box-shadow: none!important;
 }
 
 a {
@@ -184,11 +210,85 @@ a {
 
 .links {
     padding: 10px;
-    margin: 5px;
+    text-align: right;
 }
 
 .links:hover:not(.active) {
     font-weight: normal;
-    background-color: #535c5c;
+    background-color: #422a2a;
+    color: white;
     padding: 10px;
+}
+
+.detail-links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.small {
+    height: 20px;
+    width: 20px;
+    background-color: #331f20;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border: none;
+    margin-right: 3px;
+    margin-left: 10px;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-left: 50px;
+}
+
+.inline-form {
+    display: flex;
+    margin-left: 8px;
+}
+
+.small:hover:not(.active) {
+    background-color: #535c5c;
+}
+
+.comment-form {
+    margin: 0px 18px;
+}
+
+.comment-container {
+    margin: 0px 18px;
+    color: white;
+}
+
+.tables {   
+    text-align: center;
+    max-width: 500px;
+    padding-right: 10px;
+}
+
+.home-tables {   
+    text-align: center;
+    margin: auto;
+    max-width: 150px;
+}
+
+*:focus {
+    outline: none;
   }
+
+.top-line {
+    flex-flow: row wrap;
+}
+
+thead {
+    color: whitesmoke;
+    font-size: 16px;
+}

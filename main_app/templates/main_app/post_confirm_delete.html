@@ -3,13 +3,13 @@
 {% block content %}
 <div class="details-page">
   <p class="title">delete post</p>
-
-  <p>are you sure you want to delete <span class="teal-text">{{ object.title }}</span>?</p>
-
-  <form action="" method="POST">
+  <div class="center">
+    <p>are you sure you want to delete your post {{ object.title }}?</p>
+  </div>
+  <form class='center' action="" method="POST">
     {% csrf_token %}
     <input type="submit" value="delete" class="btn">
-    <a href="{% url 'posts_detail' post.id %}">cancel</a>
+    <a class='links' href="{% url 'posts_detail' post.id %}">cancel</a>
   </form>
 </div>
 {% endblock %}
