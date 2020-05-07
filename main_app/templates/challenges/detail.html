@@ -9,21 +9,36 @@
         <span>{{ challenge.date }}</span>
       </div>
       <!-- REPLIT -->
-      <iframe src="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true"
-        style="width:700px;height:700px;overflow:scroll;" id="MyFrame">
-      </iframe>
-      <select id="MySelectMenu">
-        <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true">
-          Python Challenge
-        </option>
-        <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge-Solution?lite=true">
-          Python Solution
-        </option>
-      </select>
-      <div>
-        <button class='btn' onClick="newSrc();">SEE SOLUTIONS</button>
+      <div id="challenges">
+        <iframe src="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true"
+          id="MyFrame">
+        </iframe>
+        <div>
+          <select id="MySelectMenu">
+            <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true">
+              Python Challenge
+            </option>
+            <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge-Solution?lite=true">
+              Python Solution
+            </option>
+          </select>
+        </div>
+
+        <div id="iframeBtn">
+          <button onClick="newSrc();">SEE SOLUTIONS</button>
+        </div>
+
       </div>
-        <!-- REPLIT ENDS -->
+
+
+      <script>
+        const newSrc = () => {
+          let e = document.getElementById("MySelectMenu");
+          let newSrc = e.options[e.selectedIndex].value;
+          document.getElementById("MyFrame").src = newSrc;
+        }
+      </script>
+      <!-- REPLIT ENDS -->
     </div>
     <p class='content'>{{ post.content }}</p>
   </section>

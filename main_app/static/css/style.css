@@ -298,6 +298,12 @@ thead {
   box-sizing: border-box;
 }
 
+
+#MySelectMenu {
+  display: block;
+  clear: both;
+}
+
 a.left {
   font: 60px snell roundhand;
   z-index: 100;
@@ -316,8 +322,4 @@ iframe {
     nav.brand-logo {
         left: 150px;
     }
-}
-
-.challenge {
-    display: flex;
 }
