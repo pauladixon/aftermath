@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
+
 {% block content %}
-<div class=“index-page”>
-  <p class=“title”>code challenges • index</p>
+<div class="index-page">
+  <p class="title">code challenges • index</p>
   <table>
     <tbody>
       {% for challenge in challenges %}
         <tr>
+          <td></td>
           <td class='tables'>{{ challenge.date }}</td>
           <td class='tables'><a class='links' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
           <td class='tables'>{{ challenge.challengecomment_set.all.count }} comments </td>
