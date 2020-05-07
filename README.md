@@ -49,7 +49,6 @@ _Materialize_
 - implement live chat feature
 - implement user profile pages
 
-
-
+ 
 Team Members: Paula Dixon, Bart Webber, Koa Shima, Terrell Lemons
 
