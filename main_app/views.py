@@ -5,10 +5,13 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Challenge, Post, PostComment
+from .models import Challenge, Post, PostComment, Photo
 from .forms import PostCommentForm
+import uuid
+import boto3
 
-
+S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
+BUCKET = 'aftermath-bucket'
 
 def home(request):
     return render(request, 'home.html')
@@ -62,6 +65,21 @@ def post_add_comment(request, post_id):
         new_comment.post_id = post_id 
         new_comment.user_id = request.user.id 
         new_comment.save()
+    return redirect('posts_detail', post_id=post_id)
+
+@login_required
+def add_photo(request, post_id):
+    photo_file = request.FILES.get('photo-file', None)
+    if photo_file:
+        s3 = boto3.client('s3')
+        key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+        try:
+            s3.upload_fileobj(photo_file, BUCKET, key)
+            url = f"{S3_BASE_URL}{BUCKET}/{key}"
+            photo = Photo(url=url, post_id=post_id)
+            photo.save()
+        except:
+            print('An error occurred uploading file to S3')
     return redirect('posts_detail', post_id=post_id)
 
 class PostCommentDelete(LoginRequiredMixin, DeleteView):

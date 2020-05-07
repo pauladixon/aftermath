@@ -13,7 +13,7 @@
           <td>{{ post.topic }}</td>
           <td>{{ post.user }}</td>
           {% for postcomment in post.postcomment_set.all %}
-            <td> {{ post.postcomments|length }} comments </td>
+            <td> {{ postcomments.count }} comments </td>
           {% endfor %}
         </tr>
       {% endfor %}
