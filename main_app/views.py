@@ -9,6 +9,12 @@ from .models import Challenge, ChallengeComment, Post, PostComment, Category, Ph
 from .forms import ChallengeCommentForm, PostCommentForm
 import uuid
 import boto3
+import os
+
+def some_function(request):
+    my_key = os.environ['AWS_SECRET_ACCESS_KEY']
+
+
 
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
 BUCKET = 'aftermath-bucket'
