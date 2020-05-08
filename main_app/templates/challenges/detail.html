@@ -47,7 +47,7 @@
   <!-- COMMENTS -->
   {% if challenge.challengecomment_set.all %}
   <div class="comment-container">
-    <table class="striped" class="responsive-table">
+    <table class="striped x_d" class="responsive-table">
       <thead>
         <tr>
           <th class='tables'>Date</th>
@@ -63,7 +63,7 @@
           <td class='tables'>{{ challengecomment.user }}</td>
           <td class='tables'>{{ challengecomment.content }}</td>
           {% if user == challengecomment.user %}
-          <td class='tables'><a href="{% url 'challenge_delete_comment' challengecomment.id %}">x</a></td>
+          <td class='tables x'><a href="{% url 'challenge_delete_comment' challengecomment.id %}">x</a></td>
           {% else %}
           <td></td>
           {% endif %}
