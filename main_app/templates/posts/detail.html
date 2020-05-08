@@ -20,48 +20,54 @@
           {% endif %}
         </span>
       </div>
-      <p class='content'>{{ post.content }}</p>
-      <div class="container">
-        <div>
-        {% for photo in post.photo_set.all %}
-          <img class="responsive-img" src="{{ photo.url }}">
-        {% empty %}
-          <div class="center-align">no photos uploaded</div>
-        {% endfor %}
-        </div>      
-        <form class="upload_photo" action="{% url 'add_photo' post.id %}" enctype="multipart/form-data" method="POST">
-          {% csrf_token %}
-          <input class="photoChooseFile" type="file" name="photo-file">
-          <br><br>
-          <input type="submit" class="btn" value="upload photo">
-        </form>
+      <div class="post-content">
+        <div class='photo-content'>
+          {% for photo in post.photo_set.all %}
+            <img class="responsive-img" src="{{ photo.url }}">
+          {% empty %}
+            <div>no photos uploaded</div>
+          {% endfor %}
+        </div>     
+        <div class='text-content'>
+          <p>{{ post.content }}</p>
+        </div>
       </div>
-      <div>
-          <div class="categories">
-            {% if post.categories.count %}
-              {% for category in post.categories.all %}
-                <form class='inline-form' action="{% url 'unassoc_category' post.id category.id %}" method='post'>
+      <div class="post-container">
+        {% if user == post.user %}
+          <form class="upload_photo row" action="{% url 'add_photo' post.id %}" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <div class="photo-buttons">
+              <input class="photoChooseFile" type="file" name="photo-file">
+              <br><br>
+              <input type="submit" class="btn" value="upload photo">
+            </div> 
+          </form>
+        {% endif %}
+        <div class="categories row">
+          {% if post.categories.count %}
+            {% for category in post.categories.all %}
+              <form class='inline-form' action="{% url 'unassoc_category' post.id category.id %}" method='post'>
+                {% csrf_token %}
+                <button type='submit' class='small' class='btn'>◉</button>
+                <span class='category'>{{category.name}}</span>
+              </form>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <br><br>
+        <div class="categories row"> 
+          {% if user == post.user %}
+            {% if categories.count %}
+              {% for category in categories.all %}
+                <form class='inline-form' action="{% url 'assoc_category' post.id category.id %}" method='post'>
                   {% csrf_token %}
-                  <button type='submit' class='small' class='btn'>◉</button>
-                  <span class='category'>{{category.name}}</span>
+                <button type='submit' class='small' class="btn">〇</button>
+                <span class='category'>{{category.name}}</span>
                 </form>
               {% endfor %}
             {% endif %}
-          </div>
-          <br>
-          <div class="categories"> 
-            {% if user == post.user %}
-              {% if categories.count %}
-                {% for category in categories.all %}
-                  <form class='inline-form' action="{% url 'assoc_category' post.id category.id %}" method='post'>
-                    {% csrf_token %}
-                  <button type='submit' class='small' class="btn">〇</button>
-                  <span class='category'>{{category.name}}</span>
-                  </form>
-                {% endfor %}
-              {% endif %}
-            {% endif %}
-          </div>
+          {% endif %}
+        </div>
       </div>
     </div>
   </section>
