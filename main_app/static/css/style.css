@@ -242,6 +242,7 @@ a {
 }
 
 .small {
+  position: absolute;
   height: 20px;
   width: 20px;
   background-color: #331f20;
@@ -256,7 +257,8 @@ a {
 .category {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  width: 150px;
 }
 
 .categories {
@@ -447,4 +449,9 @@ body > main > div > div.comment-form > form > p {
   font-size: 16px;
   margin: 50px;
   width: 50%;
+}
+
+.category-buttons { 
+    width: 125px;
+    height: 15px;
 }
