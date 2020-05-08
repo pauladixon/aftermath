@@ -263,7 +263,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  padding-left: 50px;
 }
 
 .inline-form {
@@ -381,18 +380,10 @@ input#id_password {
   width: 60%;
 }
 
-.upload_photo {
-  position: relative;
-  left: -8.5em;
-  top: 2.25em;
-  width: 250px;
-  height: auto;
-}
 
 .photoChooseFile {
   font-family: 'Orator Std', 'Courier New', Courier, monospace;
   box-shadow: none!important;
-  width: 43%;
   border: none;
   border-radius: 2px;
   display: inline-block;
@@ -429,6 +420,31 @@ body > main > div > div.comment-form > form > p {
   }
 }
 
-.content {
-    font-size: 18px;
+.post-container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.post-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.photo-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.text-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  margin: 50px;
+  width: 50%;
 }
