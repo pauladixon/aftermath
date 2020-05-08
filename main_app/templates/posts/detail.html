@@ -48,8 +48,10 @@
             {% for category in post.categories.all %}
               <form class='inline-form' action="{% url 'unassoc_category' post.id category.id %}" method='post'>
                 {% csrf_token %}
-                <button type='submit' class='small' class='btn'>◉</button>
-                <span class='category'>{{category.name}}</span>
+                <div class="category-buttons">
+                  <button type='submit' class='small' class='btn'>◉</button>
+                  <span class='category'>{{category.name}}</span>
+                </div>
               </form>
             {% endfor %}
           {% endif %}
@@ -61,8 +63,10 @@
               {% for category in categories.all %}
                 <form class='inline-form' action="{% url 'assoc_category' post.id category.id %}" method='post'>
                   {% csrf_token %}
-                <button type='submit' class='small' class="btn">〇</button>
-                <span class='category'>{{category.name}}</span>
+                  <div class="category-buttons">
+                    <button type='submit' class='small' class="btn">〇</button>
+                    <span class='category'>{{category.name}}</span>
+                  </div>
                 </form>
               {% endfor %}
             {% endif %}
