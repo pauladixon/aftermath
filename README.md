@@ -1,18 +1,16 @@
-# AFTERMATH
-
-[Click on Link to view Pitch Deck](https://docs.google.com/presentation/d/1HjGEziiYzdeLePbSY8IKrARZSa7_am0naTw4eNBSJws/edit?usp=sharing)
-
-[Click on Link to Open Trello Board](https://trello.com/b/ajHjwUkv/aftermath)
-
-[Check out our Heroku Deployment!](http://aftermath-app.herokuapp.com/)
-
-![ERD Screenshot](https://i.imgur.com/ihDPa6X.png)
-
-All wireframes for project are in the attached folder above.
+# Aftermath
 
 
+## Links:
 
-## Screenshot(s):
+[View the Pitch Deck](https://docs.google.com/presentation/d/1HjGEziiYzdeLePbSY8IKrARZSa7_am0naTw4eNBSJws/edit?usp=sharing)
+
+[View the Trello](https://trello.com/b/ajHjwUkv/aftermath)
+
+[View the App](http://aftermath-app.herokuapp.com/)
+
+
+## Screenshots:
 
 ![Screenshot1](https://i.imgur.com/jGN4csu.png)
 ![Screenshot2](https://i.imgur.com/Yor3nuT.png)
@@ -23,22 +21,20 @@ All wireframes for project are in the attached folder above.
 
 AFTERMATH is a dynamic computer coding forum enabling users to connect and workshop technical challenges together. Our goal is to enable graduates to continue building on their applied knowledge and to assist their efforts to enter the workforce.  
 
-
-## Technologies Used
-
-_HTML_
-_CSS_
-_Django_
-_Python_
-_Materialize_
+This web app is additionally optimized for use on iOS Chrome.
 
 
+## Technologies Used:
 
-## Getting Started
+- _HTML_
+- _CSS_
+- _Materialize_
+- _Django_
+- _Python_
 
 
 
-## Next Steps 
+## Next Steps:
 
 - Implement live chat feature
 - Implement user profile pages
@@ -49,5 +45,5 @@ _Materialize_
 
 
  
-Team Members: Paula Dixon, Bart Webber, Koa Shima, Terrell Lemons
+Created by Paula Dixon, Bart Webber, Koa Shima, and Terrell Lemons
 
