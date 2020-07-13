@@ -4,19 +4,14 @@
 <div class="grid-container">
     <div class="code-today">
         <p class="home-titles" id="today-title">
-            <a class='links' href="{% url 'challenges_index' %}">today's challenge</a>
+            <a class='home-links' href="{% url 'challenges_index' %}">today's challenge</a>
         </p>
         <div class='home-challenge'>
-            <div class="top-line">
-              <span>{{ challenge.date }}</span>
-            </div>
             <!-- REPLIT -->
             <div id="home-challenges">
               <iframe src="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true"
                 id="MyFrame">
               </iframe>
-      
-      
               <div class="solutions-select">
                 <select id="MySelectMenu" class="btn">
                   <option value="https://repl.it/@bartsw01/Fizz-Buzz-Python-Challenge?lite=true">
@@ -30,10 +25,7 @@
                   <button class="btn" onClick="newSrc();">submit</button>
                 </div>
               </div>
-      
-            </div>
-      
-      
+            </div>  
             <script>
               const newSrc = () => {
                 let e = document.getElementById("MySelectMenu");
@@ -46,38 +38,37 @@
     </div>
 
     <div class="past-challenge">
-        <p class="home-titles">        
-            <a class='links' href="{% url 'challenges_index' %}">past challenges</a>
-        </p>
-        <table class="forum-lists" class="responsive-table">
-            <tbody>
-                {% for challenge in challenges %}
-                <tr>
-                    <td class='home-tables'>{{ challenge.date }}</td>
-                    <td class='home-tables'><a class='links' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
-                    <td class='home-tables'>{{ challenge.challengecomment_set.all.count }} comments </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+      <p class="home-titles">        
+          <a class='home-links' href="{% url 'challenges_index' %}">past challenges</a>
+      </p>
+      <table class="forum-lists">
+        <tbody>
+          {% for challenge in challenges %}
+            <tr>
+              <td class='home-tables'>{{ challenge.date }}</td>
+              <td class='home-tables'><a class='links' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
+              <td class='home-tables'>{{ challenge.challengecomment_set.all.count }} comments </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
 
     <div class="free-forum">
-        <p class="home-titles">
-            <a class='links' href="{% url 'posts_index' %}">free forum</a>
-        </p>
-        <table class="forum-lists" class="responsive-table">
-                <tbody>
-                    {% for post in posts %}
-                    <tr>
-                        <td class='home-tables'>{{ post.date }}</td>
-                        <td class='home-tables'><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
-                        <td class='home-tables'>{{ post.postcomment_set.all.count }} comments </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </div>
-        </table>
+      <p class="home-titles">
+          <a class='home-links' href="{% url 'posts_index' %}">free forum</a>
+      </p>
+      <table class="forum-lists">
+        <tbody>
+          {% for post in posts %}
+            <tr>
+              <td class='home-tables'>{{ post.date }}</td>
+              <td class='home-tables'><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
+              <td class='home-tables'>{{ post.postcomment_set.all.count }} comments </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
 </div>
 
