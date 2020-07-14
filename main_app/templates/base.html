@@ -11,13 +11,14 @@
   <!-- CSS -->
   <link type="text/css" rel="stylesheet" href="{% static 'materialize/css/custom_materialize.css' %}">
   <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="https://use.typekit.net/eqd5cbo.css">
   <title>aftermath</title>
 </head>
 
 <body>
   <header>
     <nav class="nav-wrapper">
-      <div class='nav-left'><a href="/" class="logo">&nbsp;&nbsp;AFTERMATH</a></div>
+      <div class='nav-left'><a href="/" class="logo">AFTERMATH</a></div>
       <div class="nav-right" class='container'>
         <!-- <li><a href="{% url 'about' %}">about</a></li> -->
         {% if user.is_authenticated %}

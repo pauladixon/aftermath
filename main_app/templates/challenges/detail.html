@@ -50,20 +50,20 @@
     <table class="striped x_d" class="responsive-table">
       <thead>
         <tr>
-          <th class='tables'>Date</th>
+          <th class='mobile-td tables'>Date</th>
           <th class='tables'>User</th>
           <th class='tables'>Comment</th>
-          <th class='tables'>Delete</th>
+          <th class='mobile-td tables'>Delete</th>
         </tr>
       </thead>
       <tbody>
         {% for challengecomment in challenge.challengecomment_set.all %}
         <tr>
-          <td class='tables'>{{ challengecomment.created_at }}</td>
+          <td class='mobile-td tables'>{{ challengecomment.created_at }}</td>
           <td class='tables'>{{ challengecomment.user }}</td>
           <td class='tables'>{{ challengecomment.content }}</td>
           {% if user == challengecomment.user %}
-          <td class='tables x'><a href="{% url 'challenge_delete_comment' challengecomment.id %}">x</a></td>
+          <td mobile-td class='tables x'><a href="{% url 'challenge_delete_comment' challengecomment.id %}">x</a></td>
           {% else %}
           <td></td>
           {% endif %}

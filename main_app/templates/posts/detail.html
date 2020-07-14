@@ -78,20 +78,20 @@
     <table class="striped" class="responsive-table">
       <thead>
         <tr> 
-          <th class='tables'>Date</th>
+          <th class='mobile-td tables'>Date</th>
           <th class='tables'>User</th>
           <th class='tables'>Comment</th>         
-          <th class='tables'>Delete</th>
+          <th class='mobile-td tables'>Delete</th>
         </tr>
       </thead>
       <tbody>
         {% for postcomment in post.postcomment_set.all %}
           <tr>
-            <td class='tables'>{{ postcomment.created_at }}</td>
+            <td class='mobile-td tables'>{{ postcomment.created_at }}</td>
             <td class='tables'>{{ postcomment.user }}</td>
             <td class='tables'>{{ postcomment.content }}</td>          
           {% if user == postcomment.user %}
-            <td class='tables'><a href="{% url 'post_delete_comment' postcomment.id %}">x</a></td>         
+            <td class='mobile-td tables'><a href="{% url 'post_delete_comment' postcomment.id %}">x</a></td>         
           {% else %}
             <td></td>
           {% endif %}

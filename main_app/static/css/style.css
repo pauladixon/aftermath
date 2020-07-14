@@ -13,7 +13,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  font-family: 'Orator Std', 'Courier New', Courier, monospace;
+  font-family: orator-std, monospace;
   color: #c5bfbe;
   text-transform: lowercase;
   margin: 0 0;
@@ -59,7 +59,7 @@ footer.page-footer {
   font-size: 26px;
   display: flex;
   align-items: center;
-  padding-top: 3px;
+  justify-content: center;
 }
 
 .logo:hover:not(.active) {
@@ -207,7 +207,7 @@ footer.page-footer {
   background-color: #766763;
   border: solid 10px #bab5ae;
   min-height: 84.25vh;
-
+  font-size: 11px;
 }
 
 .form {
@@ -508,453 +508,472 @@ body > main > div > div.comment-form > form > p {
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) { 
-
-  .grid-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: row wrap;
-  }
-
-  .code-today {
-    width: 100%;
-    display: grid;
-    justify-content: center;
-  }
-
-  .past-challenge {
-    width: 100%;
-  }
-
-  .free-forum {
-    width: 100%;
-  }
-
-
-  footer.page-footer {
-    max-height: 5vh;
-    text-align: right;
-    color: #babcbc;
-    border-right: solid 10px #bab5ae;
-    border-left: solid 10px #bab5ae;
-    border-bottom: solid 10px #bab5ae;
-  }
-
-  .block {
-    background-color: #766763;
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-wrapper {
-    background-color: #766763;
-    border-top: solid 10px #bab5ae;
-    border-right: solid 10px #bab5ae;
-    border-left: solid 10px #bab5ae;
-    box-shadow: none!important;
-    min-height: 75px;
-  }
-
-  .brand-logo {
-    padding: 10px;
-    text-align: right;
-    color: whitesmoke;
-  }
-
-  .brand-logo:hover:not(.active) {
-    background-color: #422a2a;
-    padding-right: 40px;
-  }
-
-  .right {
-    margin: 0px 20px;
-  }
-
-  .grid-container {
-    display: grid;
-    grid-template-rows: 36em auto;
-    grid-template-areas:
-      'code code code code'
-      'challenges challenges forum forum';
-    min-height: 87.5vh;
-  }
-
-  .code-today {
-    grid-area: code;
-    background-color: #766763;
-    border-top: solid 10px #bab5ae;
-    border-right: solid 10px #bab5ae;
-    border-left: solid 10px #bab5ae;
-    display: grid;
-    justify-content: center;
-  }
-
-  .past-challenge {
-    grid-area: challenges;
-    background-color: #766763;
-    border-top: solid 10px #bab5ae;
-    border-bottom: solid 10px #bab5ae;
-    border-left: solid 10px #bab5ae;
-  }
-
-  .free-forum {
-    grid-area: forum;
-    background-color: #766763;
-    border: solid 10px #bab5ae;
-  }
-
-
-  .title {
-    background-color: #422a2a;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    font-size: 16px;
-    letter-spacing: .1em;
-    color: #bab5ae;
-  }
-
-  .home-titles {
-    background-color: #422a2a;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    font-size: 18px;
-    letter-spacing: .1em;
-    color: #bab5ae;
-  }
-
-  #today-title {
-    width: 93vw;
-    margin-bottom: 0px;
-  }
-
-  .code-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .code-block {
-    color: black;
-    background-color: #9a958e;
-    margin: 20px 10px 0px 10px;
-    justify-content: center;
-    min-height: 30.5vh;
-    width: 45vw;;
-    padding: 5px;
-  }
-
-  .code-snippet {
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
-    font-size: 15px;
-    background-color: #331f20;
-    display: grid;
-    padding: 0px 10px;
-    margin: 10px;
-    min-height: 18vh;
-  }
-
-  .indent {
-    margin-left: 20px;
-    margin-top: 0px;
-    height: 50px;
-  }
-
-  .code-intro {
-    padding: 0px 10px;
-  }
-
-  .forum-lists {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .index-page {
-    background-color: #766763;
-    border: solid 10px #bab5ae;
-    min-height: 84.25vh;
-  }
-
-  .details-page {
-    background-color: #766763;
-    border: solid 10px #bab5ae;
-    min-height: 84.25vh;
-
-  }
-
-  .form {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Orator Std', 'Courier New', Courier, monospace;
-    margin: 50px 200px;
-  }
-
-  .show-post {
-    background-color: #331f20;
-    color: #aba69f;
-    margin: 15px;
-    padding: 10px;
-    display: grid;
-  }
-
-  .content {
-    color: white;
-    text-align: center;
-    margin: 60px;
-  }
-
-  .btn {
-    background-color: #422a2a;
-    font-family: 'Orator Std', 'Courier New', Courier, monospace;
-    box-shadow: none!important;
-  }
-
-  .btn:hover:not(.active) {
-    background-color: #422a2a;
-    box-shadow: 1px 1px 7px black !important;
-  }
-
-  a {
-    color: white;
-    font-weight: bolder;
-  }
-
-  .links {
-    padding: 10px;
-    text-align: right;
-  }
-
-  .links:hover:not(.active) {
-    font-weight: normal;
-    background-color: #422a2a;
-    color: white;
-    padding: 10px;
-    font-weight: normal;
-    background-color: #422a2a;
-    color: white;
-    padding: 24px 10px;
-  }
-
-  .detail-links {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .small {
-    height: 20px;
-    width: 20px;
-    background-color: #331f20;
-    color: white;
-    display: flex;
-    justify-content: center;
-    border: none;
-    margin-right: 3px;
-    margin-left: 10px;
-  }
-
-  .category {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-
-  .inline-form {
-    display: flex;
-    margin-left: 8px;
-  }
-
-  .small:hover:not(.active) {
-    background-color: #535c5c;
-  }
-
-  .comment-form {
-    margin: 18px;
-  }
-
-  .comment-container {
-    margin: -15px 15px 0;
-    color: white;
-  }
-
-  .tables {   
-    text-align: center;
-    max-width: 500px;
-    padding-right: 10px;
-  }
-
-  body > main > div > div.comment-container > 
-  table > tbody > tr:nth-child(1) > .x_d {   
-    font-size: 20px;
-  }
-
-  .home-table {
-    margin: 20px;
-    padding: 20px;
-  }
-
-  .home-tables {   
-    text-align: center;
-  }
-
-  .home-table-row {
-    margin: 0px 10px;
-  }
-
-  *:focus {
-    outline: none;
+    
+    footer.page-footer {
+      max-height: 5vh;
+      font-size: 8px;
+      text-align: center;
+    }
+    
+    .nav-wrapper {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      flex-flow: row wrap;
+    }
+    
+    .nav-left {
+      width: 100%;
+      height: 60%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .logo {
+      height: 100%;
+      color: whitesmoke;
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .logo:hover:not(.active) {
+      background-color: #422a2a;
+      padding: 0px;
+    }
+    
+    .nav-right {
+      width: 100%;
+      height: 40%;
+      margin-right: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12.5px;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px 10px;
+    }
+    
+    .nav-links:hover:not(.active) {
+      font-weight: normal;
+      background-color: transparent;
+      color: white;
+    }
+    
+    .grid-container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: [col] 100%;
+      grid-template-rows: [row] auto [row] auto [row];
+    }
+    
+    .code-today {
+      /* grid-area: code; */
+      grid-column: col / span 1;
+      grid-row: row;
+      background-color: #766763;
+      border-top: solid 10px #bab5ae;
+      border-right: solid 10px #bab5ae;
+      border-left: solid 10px #bab5ae;
+      display: flex;
+      justify-content: center;
+      flex-flow: row wrap;
+    }
+    
+    .past-challenge {
+      /* grid-area: challenges; */
+      grid-column: col / span 2;
+      grid-row: row 2;
+      background-color: #766763;
+      border-top: solid 10px #bab5ae;
+      border-right: solid 10px #bab5ae;
+      border-left: solid 10px #bab5ae;
+    }
+    
+    .free-forum {
+      /* grid-area: forum; */
+      grid-column: col / span 1;
+      grid-row: row 3;
+      background-color: #766763;
+      border-top: 0;
+      border-bottom: solid 10px #bab5ae;
+      border-right: solid 10px #bab5ae;
+      border-left: solid 10px #bab5ae;
+    }
+    
+    .home-titles {
+      background-color: #422a2a;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      font-size: 18px;
+      letter-spacing: .1em;
+      color: #bab5ae;
+    }
+    
+    #today-title {
+      width: 93vw;
+      margin-bottom: 0px;
+    }
+    
+    .code-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .code-block {
+      color: black;
+      background-color: #9a958e;
+      margin: 10px 10px 0px 10px;
+      justify-content: center;
+      min-height: 30.5vh;
+      width: 100%;
+      padding: 5px;
+    }
+    
+    .code-snippet {
+      font-family: 'Courier New', Courier, monospace;
+      color: white;
+      font-size: 15px;
+      background-color: #331f20;
+      display: grid;
+      padding: 0px 10px;
+      min-height: 18vh;
+    }
+    
+    .indent {
+      margin-left: 20px;
+      margin-top: 0px;
+      height: 50px;
+    }
+    
+    .code-intro {
+      padding: 0px 10px;
+    }
+    
+    .forum-lists {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .index-page {
+      background-color: #766763;
+      border: solid 10px #bab5ae;
+      min-height: 84.25vh;
+    }
+    
+    .details-page {
+      background-color: #766763;
+      border: solid 10px #bab5ae;
+      min-height: 84.25vh;
+    
+    }
+    
+    .form {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Orator Std', 'Courier New', Courier, monospace;
+      width: 250px;
+      margin: 50px 20px;
+    }
+    
+    .show-post {
+      background-color: #331f20;
+      color: #aba69f;
+      margin: 15px;
+      padding: 10px;
+      display: grid;
+    }
+    
+    .content {
+      color: white;
+      text-align: center;
+      margin: 60px;
+    }
+    
+    .btn {
+      background-color: #422a2a;
+      font-family: 'Orator Std', 'Courier New', Courier, monospace;
+      box-shadow: none!important;
+    }
+    
+    .btn:hover:not(.active) {
+      background-color: #422a2a;
+      box-shadow: 1px 1px 7px black !important;
+    }
+    
+    a {
+      color: white;
+      font-weight: bolder;
+    }
+    
+    .detail-links {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .links {
+      display: flex;
+      align-items: center;
+      padding: 0px 15px;
+    }
+    
+    .links:hover:not(.active) {
+      font-weight: normal;
+      background-color: #422a2a;
+      color: white;
+      height: 100%;
+    }
+    
+    .home-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .home-links:hover:not(.active) {
+      font-weight: normal;
+      background-color: #331f20;
+      color: white;
+    }
+    
+    .small {
+      height: 20px;
+      width: 20px;
+      background-color: #331f20;
+      color: white;
+      display: flex;
+      justify-content: center;
+      border: none;
+      margin-right: 3px;
+      margin-left: 10px;
+    }
+    
+    .category {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    
+    .inline-form {
+      display: flex;
+      margin-left: 8px;
+    }
+    
+    .small:hover:not(.active) {
+      background-color: #535c5c;
+    }
+    
+    .comment-form {
+      margin: 18px;
+    }
+    
+    .comment-container {
+      margin: -15px 15px 0;
+      color: white;
+    }
+    
+    .tables {   
+      text-align: center;
+      max-width: 500px;
+      padding-right: 10px;
+    }
+    
+    body > main > div > div.comment-container > 
+    table > tbody > tr:nth-child(1) > .x_d {   
+      font-size: 20px;
+    }
+    
+    *:focus {
+      outline: none;
+      }
+    
+    .top-line {
+      flex-flow: row wrap;
+    }
+    
+    thead {
+      color: whitesmoke;
+      font-size: 16px;
+    }
+    
+    #challenges { 
+      height: 250px;
+      width: 98%;
+      margin: auto;
+      margin-top: 25px;
+    }
+    
+    #MySelectMenu {
+      display: block;
+      clear: both;
+      text-align: center;
+    }
+    
+    a.left {
+      font: 60px snell roundhand;
+      z-index: 100;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      font-size: 60px;
+    }
+    
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+    
+    input#id_username, 
+    input#id_password {
+      padding: 0 1em;
+      font-family: 
+        'Orator Std', 'Courier New', 
+        Courier, monospace;
+      font-size: 20px;
+      border-radius: 5px;
+    }
+    
+    #show-challenge {
+      background-color: #331f20;
+      color: #aba69f;
+      margin: 15px;
+      padding: 10px;
+      height: 360px;
+    }
+    
+    .solutions-select {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 5px;
+    }
+    
+    #home-challenges {
+      height: 80%;
+      width: 93%;
+      margin: auto;
+      margin-top: 25px;
+    }
+    
+    .home-challenge {
+      background-color: #331f20;
+      color: #aba69f;
+      margin: -1em auto;
+      padding: 10px;
+      height: 415px;
+      min-width: 315px;
+      margin: 10px 0px;
+    }
+    
+    
+    .photoChooseFile {
+      font-family: 'Orator Std', 'Courier New', Courier, monospace;
+      box-shadow: none!important;
+      border: none;
+      border-radius: 2px;
+      display: inline-block;
+      height: 36px;
+      line-height: 36px;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    
+    body > main > div > div > form > input.btn {
+      width: 100%;
+      position: relative;
+      top: 1em;
+      left: 1em;
+    }
+    
+    body > main > div > div.comment-form > form > p {
+      margin: 1em 0;
+    }
+    
+    .x {
+      font-size: 2em;
+    }
+    
+    .links.forum {
+      position: relative;
+      left: 2em;
+      top: 2em;
+    }
+    
+    
+    .post-container {
+      display: flex;
+      justify-content: space-between;
+      margin: auto;
+    }
+    
+    .post-content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 20px;
+    }
+    
+    .photo-content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100px;
     }
 
-  .top-line {
-    flex-flow: row wrap;
-  }
+    .responsive-img {
+      width: 120px;
+    }
+    
+    .text-content {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      color: white;
+      font-size: 16px;
+      margin: 50px;
+      width: 50%;
+    }
+    
+    .table-topic {
+      min-width: 100px;
+      text-align: center;
+    }
+    
+    .table-link {
+      padding: 19px 5px;
+    }
+      
+    .table-link:hover:not(.active) {
+      font-weight: normal;
+      background-color: #422a2a;
+      color: white;
+    } 
+    
+    .add-topic {
+      padding-top: 15px;
+    }
 
-  thead {
-    color: whitesmoke;
-    font-size: 16px;
-  }
-
-  #challenges { 
-    height: 450px;
-    width: 80%;
-    margin: auto;
-    margin-top: 25px;
-  }
-
-  #MySelectMenu {
-    display: block;
-    width: 175px;
-    clear: both;
-    margin-right: 5px;
-  }
-
-  a.left {
-    font: 60px snell roundhand;
-    z-index: 100;
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    font-size: 60px;
-  }
-
-  iframe {
-    width: 100%;
-    height: 100%;
-  }
-
-  input#id_username, 
-  input#id_password {
-    padding: 0 1em;
-    font-family: 
-      'Orator Std', 'Courier New', 
-      Courier, monospace;
-    font-size: 20px;
-    border-radius: 5px;
-  }
-
-  #show-challenge {
-    background-color: #331f20;
-    color: #aba69f;
-    margin: 15px;
-    padding: 10px;
-    height: 600px;
-  }
-
-  .solutions-select {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 5px;
-  }
-
-  #home-challenges {
-    height: 80%;
-    width: 93%;
-    margin: auto;
-    margin-top: 25px;
-  }
-
-  .home-challenge {
-    background-color: #331f20;
-    color: #aba69f;
-    margin: -1em auto;
-    padding: 10px;
-    height: 415px;
-    width: 60%;
-  }
-
-
-  .photoChooseFile {
-    font-family: 'Orator Std', 'Courier New', Courier, monospace;
-    box-shadow: none!important;
-    border: none;
-    border-radius: 2px;
-    display: inline-block;
-    height: 36px;
-    line-height: 36px;
-    text-transform: uppercase;
-    vertical-align: middle;
-  }
-
-  body > main > div > div > form > input.btn {
-    width: 100%;
-    position: relative;
-    top: 1em;
-    left: 1em;
-  }
-
-  body > main > div > div.comment-form > form > p {
-    margin: 1em 0;
-  }
-
-  .x {
-    font-size: 2em;
-  }
-
-  .links.forum {
-    position: relative;
-    left: 2em;
-    top: 2em;
-  }
-
-
-  .post-container {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-  }
-
-  .post-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 20px;
-  }
-
-  .photo-content {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .text-content {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    color: white;
-    font-size: 16px;
-    margin: 50px;
-    width: 50%;
-  }
+    .mobile-td {
+      font-size: 0px;
+    }
 }
