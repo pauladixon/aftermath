@@ -8,7 +8,7 @@
       {% for post in posts %}
         <tr>
           <td class='tables'>{{ post.created_at }}</td>
-          <td class='tables'><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
+          <td class='tables'><a class='table-link' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
           <td class='tables'>
             {% for category in post.categories.all %}
               <span class='category'>
@@ -24,6 +24,8 @@
       </tbody>
     </div>
   </table>
-  <a class='links forum' href="{% url 'posts_create' %}">add a forum topic</a>
+  <div class="add-topic">
+    <a class='table-link forum' href="{% url 'posts_create' %}">add a forum topic</a>
+  </div>
 </div>
 {% endblock %}

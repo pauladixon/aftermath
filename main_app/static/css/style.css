@@ -50,15 +50,16 @@ footer.page-footer {
 }
 
 .nav-left {
-  width: 22%;
+  width: 23.5%;
   height: 100%;
 }
 
 .logo {
   color: whitesmoke;
-  font-size: 24px;
+  font-size: 26px;
   display: flex;
   align-items: center;
+  padding-top: 3px;
 }
 
 .logo:hover:not(.active) {
@@ -163,7 +164,7 @@ footer.page-footer {
 .code-block {
   color: black;
   background-color: #9a958e;
-  margin: 20px 10px 0px 10px;
+  margin: 10px 10px 0px 10px;
   justify-content: center;
   min-height: 30.5vh;
   width: 45vw;;
@@ -177,7 +178,6 @@ footer.page-footer {
   background-color: #331f20;
   display: grid;
   padding: 0px 10px;
-  margin: 10px;
   min-height: 18vh;
 }
 
@@ -333,10 +333,6 @@ table > tbody > tr:nth-child(1) > .x_d {
   font-size: 20px;
 }
 
-.home-tables {   
-
-}
-
 *:focus {
   outline: none;
   }
@@ -482,7 +478,24 @@ body > main > div > div.comment-form > form > p {
   width: 50%;
 }
 
+.table-topic {
+  min-width: 200px;
+  text-align: center;
+}
 
+.table-link {
+  padding: 19px 45px;
+}
+  
+.table-link:hover:not(.active) {
+  font-weight: normal;
+  background-color: #422a2a;
+  color: white;
+} 
+
+.add-topic {
+  padding-top: 15px;
+}
 
 
 

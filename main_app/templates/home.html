@@ -46,7 +46,7 @@
           {% for challenge in challenges %}
             <tr>
               <td class='home-tables'>{{ challenge.date }}</td>
-              <td class='home-tables'><a class='links' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
+              <td class='home-tables table-topic'><a class='table-link' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
               <td class='home-tables'>{{ challenge.challengecomment_set.all.count }} comments </td>
             </tr>
           {% endfor %}
@@ -63,7 +63,7 @@
           {% for post in posts %}
             <tr>
               <td class='home-tables'>{{ post.date }}</td>
-              <td class='home-tables'><a class='links' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
+              <td class='home-tables table-topic'><a class='table-link' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
               <td class='home-tables'>{{ post.postcomment_set.all.count }} comments </td>
             </tr>
           {% endfor %}

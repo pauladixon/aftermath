@@ -9,7 +9,7 @@
         <tr>
           <td></td>
           <td class='tables'>{{ challenge.date }}</td>
-          <td class='tables'><a class='links' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
+          <td class='tables'><a class='table-link' href="/challenges/{{ challenge.id }}">{{ challenge.title }}</a></td>
           <td class='tables'>{{ challenge.challengecomment_set.all.count }} comments </td>
         </tr>
       {% endfor %}
