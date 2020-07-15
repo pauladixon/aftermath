@@ -481,12 +481,13 @@ body > main > div > div.comment-form > form > p {
 }
 
 .table-topic {
-  min-width: 200px;
+  min-width: 100px;
   text-align: center;
 }
 
 .table-link {
-  padding: 19px 45px;
+  min-width: 60px;
+  padding: 19px 15px;
 }
   
 .table-link:hover:not(.active) {
