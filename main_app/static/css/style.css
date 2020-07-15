@@ -670,12 +670,14 @@ body > main > div > div.comment-form > form > p {
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 12px;
     }
     
     .index-page {
       background-color: #766763;
       border: solid 10px #bab5ae;
       min-height: 84.25vh;
+      font-size: 10px;
     }
     
     .details-page {
@@ -799,7 +801,7 @@ body > main > div > div.comment-form > form > p {
     
     .tables {   
       text-align: center;
-      max-width: 500px;
+      max-width: 300px;
       padding-right: 10px;
     }
     
@@ -987,4 +989,6 @@ body > main > div > div.comment-form > form > p {
 
     .mobile-td {
       font-size: 0px;
+      width: 0px;
     }
+  }
