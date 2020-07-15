@@ -124,9 +124,9 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 
-STATICFILES_DIRS = (
-    os.path.join(os.path.normpath(BASE_DIR), "static")
-)
+STATICFILES_DIRS = [
+  '/static/'
+]
 
 import environ
 environ.Env()

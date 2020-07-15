@@ -839,6 +839,7 @@ body > main > div > div.comment-form > form > p {
       display: block;
       clear: both;
       text-align: center;
+      -webkit-appearance: none;
     }
     
     a.left {
@@ -896,6 +897,9 @@ body > main > div > div.comment-form > form > p {
       margin: 10px 0px;
     }
     
+    .btn {
+      -webkit-appearance: none;
+    }
     
     .photoChooseFile {
       font-family: 'Orator Std', 'Courier New', Courier, monospace;
