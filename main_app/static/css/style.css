@@ -670,19 +670,20 @@ body > main > div > div.comment-form > form > p {
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 12px;
     }
     
     .index-page {
       background-color: #766763;
       border: solid 10px #bab5ae;
       min-height: 84.25vh;
+      font-size: 10px;
     }
     
     .details-page {
       background-color: #766763;
       border: solid 10px #bab5ae;
       min-height: 84.25vh;
-    
     }
     
     .form {
@@ -800,7 +801,7 @@ body > main > div > div.comment-form > form > p {
     
     .tables {   
       text-align: center;
-      max-width: 500px;
+      max-width: 300px;
       padding-right: 10px;
     }
     
@@ -815,6 +816,11 @@ body > main > div > div.comment-form > form > p {
     
     .top-line {
       flex-flow: row wrap;
+      width: 290px;
+    }
+
+    .right {
+      display: flex;
     }
     
     thead {
@@ -926,9 +932,11 @@ body > main > div > div.comment-form > form > p {
     
     
     .post-container {
-      display: flex;
-      justify-content: space-between;
-      margin: auto;
+      display: grid;
+      flex-flow: row wrap;
+      margin: 0px 0px 0px 0px;
+      padding: 0px;
+      width: 270px;
     }
     
     .post-content {
@@ -936,6 +944,7 @@ body > main > div > div.comment-form > form > p {
       justify-content: space-around;
       align-items: center;
       margin: 20px;
+      width: 250px;
     }
     
     .photo-content {
@@ -954,9 +963,9 @@ body > main > div > div.comment-form > form > p {
       justify-content: space-evenly;
       align-items: center;
       color: white;
-      font-size: 16px;
+      font-size: 10px;
       margin: 50px;
-      width: 50%;
+      width: 80px;
     }
     
     .table-topic {
@@ -980,4 +989,6 @@ body > main > div > div.comment-form > form > p {
 
     .mobile-td {
       font-size: 0px;
+      width: 0px;
     }
+  }

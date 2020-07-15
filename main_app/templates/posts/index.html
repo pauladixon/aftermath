@@ -11,7 +11,7 @@
           <td class='tables'><a class='table-link' href="/posts/{{ post.id }}">{{ post.title }}</a></td>
           <td class='mobile-td tables'>
             {% for category in post.categories.all %}
-              <span class='category'>
+              <span class='mobile-td category'>
                 {{category.name}}
               </span>
             {% endfor %}
