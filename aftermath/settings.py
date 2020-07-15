@@ -125,11 +125,8 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 STATICFILES_DIRS = (
-    normpath(join(BASE_DIR, 'static')),
-    normpath(join(BASE_DIR, 'upload')),
+    os.path.join(os.path.normpath(BASE_DIR), "static")
 )
-
-STATIC_ROOT = normpath(join(BASE_DIR, 'assets'))
 
 import environ
 environ.Env()
