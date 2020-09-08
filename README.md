@@ -9,8 +9,6 @@
 
 [View the App](http://aftermath-app.herokuapp.com/)
 
-check
-
 ## Screenshots:
 
 ![Screenshot1](https://i.imgur.com/jGN4csu.png)
